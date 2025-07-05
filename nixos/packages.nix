@@ -5,6 +5,7 @@
 
 	programs = {
 		firefox.enable = true;
+		hyprland.enable = true;
 	};
 
 	environment.systemPackages = with pkgs; [
@@ -17,6 +18,8 @@
 		zip
 		ffmpeg
 		openssl
+		fastfetch
+		cava
 
 		# Desktop apps
 		audacity
@@ -25,7 +28,13 @@
 		mpv
 
 		home-manager
+		
+		# DE and WM stuff
+		kdePackages.kate
+		hyprland
 
-
+		# Terminal emulators
+		kitty
+		alacritty
 	];
 }
