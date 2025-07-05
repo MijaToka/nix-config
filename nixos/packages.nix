@@ -23,9 +23,6 @@
 		rofi
 		wofi
 		mpv
-		discord
-		zoom-us
-		obsidian
 
 		home-manager
 

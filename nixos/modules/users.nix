@@ -9,8 +9,11 @@
 			description = "Mijail Tokarev";
 			extraGroups = [ "networkmanager" "wheel" "input" "libvirtd" ];
 			packages = with pkgs; [
-				kdePackages.kate
 				vscode
+				discord
+				obsidian
+				zoom-us
+				spotify
 			];
 		};
 	};
