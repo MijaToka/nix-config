@@ -34,6 +34,7 @@
 		kdePackages.kate
 		hyprland
 		waybar
+		brightnessctl
 
 		# Terminal emulators
 		kitty

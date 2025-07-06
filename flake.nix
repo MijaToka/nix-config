@@ -34,7 +34,7 @@
 				pkgs = nixpkgs.legacyPackages.${system};
 				modules = [
 					./Mija/home.nix
-				]
+				];
 			};
 
 			};
