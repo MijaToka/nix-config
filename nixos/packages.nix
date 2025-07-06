@@ -21,6 +21,9 @@
 		fastfetch
 		cava
 
+		# Editors
+		neovim
+		
 		# Desktop apps
 		audacity
 		rofi
@@ -30,6 +33,7 @@
 		# DE and WM stuff
 		kdePackages.kate
 		hyprland
+		waybar
 
 		# Terminal emulators
 		kitty
