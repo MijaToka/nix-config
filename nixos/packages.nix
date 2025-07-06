@@ -27,8 +27,6 @@
 		wofi
 		mpv
 
-		home-manager
-		
 		# DE and WM stuff
 		kdePackages.kate
 		hyprland
@@ -36,5 +34,15 @@
 		# Terminal emulators
 		kitty
 		alacritty
+
+		# Wayland thingis
+
+		# Other
+		home-manager
+
 	];
+	
+	# fonts.packages = with pkgs; [
+	# 	nerdfonts
+	# ];
 }
