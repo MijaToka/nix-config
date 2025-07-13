@@ -20,6 +20,8 @@
 		openssl
 		fastfetch
 		cava
+		xorg.xev
+		nh
 
 		# Editors
 		neovim

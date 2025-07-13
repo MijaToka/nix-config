@@ -15,6 +15,7 @@
 				zoom-us
 				spotify
 				whatsapp-for-linux
+				audacity
 			];
 		};
 	};
