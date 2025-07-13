@@ -145,6 +145,8 @@
       windowrule = [
         # "supressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        # "force_xwayland, class:^(steam)$"
+        # "force_xwayland, title:^(Steam.*)$"
       ];
 
       exec-once = [
@@ -155,10 +157,10 @@
 
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
-        "$mainMod, Q, exec, $terminal"
-        "$mainMod, C, killactive,"
-        "$mainMod, M, exit,"
-        "$mainMod, E, exec, $fileManager"
+        "$mainMod, T, exec, $terminal"
+        "$mainMod, Q, killactive,"
+        "$mainMod, Delete, exit,"
+        "$mainMod, F, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, P, pseudo, # dwindle"
