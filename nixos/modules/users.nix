@@ -14,11 +14,12 @@
 				obsidian
 				zoom-us
 				spotify
+				whatsapp-for-linux
 			];
 		};
 	};
 
 	# Enable automatic login for the user.
-	services.displayManager.autoLogin.enable = true;
+	services.displayManager.autoLogin.enable = false;
 	services.displayManager.autoLogin.user = "mija";
 }
