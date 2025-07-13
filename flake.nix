@@ -30,7 +30,7 @@
 		};
 
 		homeConfigurations = {
-			mija = home-manager.lib.homemanagerConfiguration {
+			mija = home-manager.lib.homeManagerConfiguration {
 				pkgs = nixpkgs.legacyPackages.${system};
 				modules = [
 					./Mija/home.nix
