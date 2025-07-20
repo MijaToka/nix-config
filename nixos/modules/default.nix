@@ -8,6 +8,7 @@
 		./kde.nix
 		./openGL.nix	
 		./sound.nix
+		./udev.nix
 		./users.nix
 		./xserver.nix
 	];
