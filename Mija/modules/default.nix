@@ -8,5 +8,6 @@
     ./fonts.nix
     ./stylix.nix
     ./kitty.nix
+    ./nvf.nix
   ];
 }

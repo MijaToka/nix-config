@@ -13,9 +13,14 @@
 			url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		nvf = {
+			url = "github:NotAShelf/nvf";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs : 
+	outputs = { self, nixpkgs, home-manager, stylix, nvf, ... }@inputs : 
 
 		let
 			system = "x86_64-linux"; 
@@ -40,6 +45,7 @@
 				modules = [
 					./Mija/home.nix
 					stylix.homeManagerModules.stylix
+					nvf.homeManagerModules.nvf
 				];
 			};
 
