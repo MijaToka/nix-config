@@ -13,7 +13,7 @@
         {
           timeout = 180;
           on-timeout = "brightnessctl -s set 30";
-          on-resime = "brightnessctl -r";
+          on-resume = "brightnessctl -r";
         }
         {
           timeout = 300;
