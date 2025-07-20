@@ -1,7 +1,11 @@
 {
   imports = [
-   ./git.nix 
-   ./hyprland
-   ./zsh.nix
+    ./git.nix 
+    ./swaync
+    ./wofi
+    ./hyprland
+    ./zsh.nix
+    ./fonts.nix
+    ./stylix.nix
   ];
 }
