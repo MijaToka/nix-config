@@ -39,7 +39,7 @@
           scroll_factor = 0.8;
         };
 
-        sensitivity = -0.1; # [-1.0,1.0], 0 means no modification.
+        sensitivity = -0.15; # [-1.0,1.0], 0 means no modification.
       };
 
       general = {
@@ -151,6 +151,7 @@
 
       exec-once = [
         "waybar"
+        "hyprpaper"
       ];
 
     };
