@@ -22,6 +22,7 @@
 		cava
 		xorg.xev
 		nh
+		usbutils
 
 		# Editors
 		neovim
@@ -31,12 +32,14 @@
 		rofi
 		wofi
 		mpv
+		vlc
 
 		# DE and WM stuff
 		kdePackages.kate
 		hyprland
 		waybar
 		brightnessctl
+		mako
 
 		# Terminal emulators
 		kitty
@@ -47,6 +50,8 @@
 		# Other
 		home-manager
 
+		# Device drivers
+		sc-controller
 	];
 	
 	# fonts.packages = with pkgs; [
