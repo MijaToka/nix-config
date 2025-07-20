@@ -1,4 +1,4 @@
-{
+{ pkgs, inputs, stylix, ... }:{
   imports = [
     ./modules
   ];

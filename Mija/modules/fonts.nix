@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }:{
   home.packages = with pkgs; [
     dejavu_fonts
     jetbrains-mono
@@ -8,6 +8,6 @@
     font-awesome
     powerline-fonts
     powerline-symbols
-    (nerdfonts.override { fonts = [ "NerdFontsSymbolsOnly" ]; })
+    nerd-fonts.symbols-only
   ];
 }
