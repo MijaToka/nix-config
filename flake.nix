@@ -15,7 +15,7 @@
 		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, ... }@inputs : 
+	outputs = { self, nixpkgs, home-manager, stylix, ... }@inputs : 
 
 		let
 			system = "x86_64-linux"; 
@@ -39,6 +39,7 @@
 				pkgs = nixpkgs.legacyPackages.${system};
 				modules = [
 					./Mija/home.nix
+					stylix.homeManagerModules.stylix
 				];
 			};
 

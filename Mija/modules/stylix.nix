@@ -1,19 +1,21 @@
-{ pkgs, inputs, ... }:{
-  imports = [ inputs.stylix.homeManagerModules.stylix];
+{ pkgs, stylix, ... }:{
+  # imports = [ stylix.homeManagerModules.stylix ];
   stylix = {
     enable = true;
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     polarity = "dark";
-    base16scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     
-    inherit (builtins) foldl';
 
-    targets = foldl' acc: elem: acc//{${elem} = {enable = false;};} {} [
-      wofi
-      neovim
-      hyprland
-      hyprlock
-      waybar
-    ];
+    targets = {
+      wofi.enable = false;
+      neovim.enable = false;
+      hyprland.enable = false;
+      hyprlock.enable = false;
+      waybar.enable = false;
+      vscode.enable = false;
+      mako.enable = false;
+      wpaperd.enable = false;
+    };
 
     fonts = {
       emoji = {
@@ -46,8 +48,8 @@
     };
 
     image = pkgs.fetchurl {
-      url = "https://codeberg.org/lunik1/nixos-logo-gruvbox-wallpaper/raw/branch/master/png/gruvbox-dark-rainbow.png";
-      sha256 = "";
+      url = "https://i.imgur.com/7Q7MPWC.jpeg";
+      sha256 = "sha256-4R7KkpbSlFIjlYMS1tmkwpKcEUSNp97EHQM1C4XrBoM=";
     };
   };
 }
