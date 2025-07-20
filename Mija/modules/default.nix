@@ -7,5 +7,6 @@
     ./zsh.nix
     ./fonts.nix
     ./stylix.nix
+    ./kitty.nix
   ];
 }
