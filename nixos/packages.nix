@@ -37,6 +37,7 @@
 		# DE and WM stuff
 		kdePackages.kate
 		hyprland
+		hyprpaper
 		waybar
 		brightnessctl
 		mako
