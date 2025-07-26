@@ -41,6 +41,7 @@
 		waybar
 		brightnessctl
 		mako
+		quickshell
 
 		# Terminal emulators
 		kitty
