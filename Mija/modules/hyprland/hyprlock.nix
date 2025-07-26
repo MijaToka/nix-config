@@ -1,4 +1,4 @@
-{
+{...}:{
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -6,10 +6,10 @@
         # disable_loading_bar = true;
         # gracie = 10;
         hide_cursor = false;
-	ignore_empty_input = true;
-	text_trim = true;
-	fractional_scaling = 2;
-	fail_timeout = 1000; #ms
+        ignore_empty_input = true;
+        text_trim = true;
+        fractional_scaling = 2;
+        fail_timeout = 1000; #ms
         # no_fade_in = false;
       };
 
@@ -32,15 +32,15 @@
       ];
 
       auth = {
-	pam = {
-	  enabled = true;
-	  module = "hyprlock";
-	};
-      	  fingerprint = {
-	  enabled = true;
-	  ready_message = "Scan fingerprint to unlock";
-	  present_message = "Scanning fingerprint";
-	  retry_delay = 250; #ms
+        pam = {
+          enabled = true;
+          module = "hyprlock";
+        };
+        fingerprint = {
+          enabled = true;
+          ready_message = "Scan fingerprint to unlock";
+          present_message = "Scanning fingerprint";
+          retry_delay = 250; #ms
         };
       };
 
