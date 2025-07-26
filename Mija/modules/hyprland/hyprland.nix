@@ -36,10 +36,15 @@
 
         touchpad = {
           natural_scroll = true;
-          scroll_factor = 0.8;
+          scroll_factor = 0.5;
         };
 
-        sensitivity = -0.15; # [-1.0,1.0], 0 means no modification.
+        sensitivity = -0.25; # [-1.0,1.0], 0 means no modification.
+      };
+
+      device = {
+          name = "asue140d:00-04f3:31b9-touchpad";
+          sensitivity = 0.25;
       };
 
       general = {
