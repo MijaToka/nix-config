@@ -39,7 +39,7 @@
           scroll_factor = 0.5;
         };
 
-        sensitivity = -0.25; # [-1.0,1.0], 0 means no modification.
+        sensitivity = -0.45; # [-1.0,1.0], 0 means no modification.
       };
 
       device = {
