@@ -5,9 +5,8 @@ import Quickshell.Hyprland
 Row {
     spacing: 2
     anchors {
-        left: parent.left
+        centerIn: parent
         verticalCenter: parent.verticalCenter
-        leftMargin: 20
     }
 
     HyprWorkspaces {}
