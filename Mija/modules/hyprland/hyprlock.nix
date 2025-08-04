@@ -1,4 +1,6 @@
-{...}:{
+{ config, ... }: let
+  base16Scheme = config.stylix.base16Scheme;
+in{
   programs.hyprlock = {
     enable = true;
     settings = {
