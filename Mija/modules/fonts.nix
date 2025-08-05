@@ -9,5 +9,6 @@
     powerline-fonts
     powerline-symbols
     nerd-fonts.symbols-only
+    nerd-fonts.jetbrains-mono
   ];
 }
