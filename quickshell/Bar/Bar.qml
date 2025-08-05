@@ -20,7 +20,7 @@ Scope {
                 right: 10
             }
 
-            BarBase {}
+            BarBg {}
             BarContents { id: barContent }     
 
 

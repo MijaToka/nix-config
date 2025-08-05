@@ -6,22 +6,51 @@ Row {
     anchors {
         right: parent.right
         verticalCenter: parent.verticalCenter
-        rightMargin: 20
+        rightMargin: 0
     }
+
+    height: parent.height - 12
+
     PowerProfileIndicator {id:powerProfile}
-    Text {
-        text: powerProfile.powerProfile
-        color: "#ffffff"
-        font {
-            pixelSize: 12
-            family: "Symbols Nerd Font"
+    
+    Button { // CPU/GPU
+        text: " 0 \uf4bc"
+        isSymbol: false
         }
+    
+    Button { // Wifi
+        text: "\uf1eb"
     }
-    Text {
-        text: Time.time
-        color : "#ffffff"
-        font {
-            pixelSize: 12
+
+    Button { // Bluetooth
+        text: "\udb80\udcaf"
+    }
+    
+    Button { // Battery
+        text: "\udb80\udc79"
+    }
+    Button { // Power profile
+        text: powerProfile.powerProfile 
+        fillColor: powerProfile.color
         }
+    
+    Button { // Date
+        text: Time.date
+        isSymbol: false
+    }
+
+    Button { // Time
+        text: Time.time
+        isSymbol: false
+        }
+
+    Button { //Power button
+        text: "\u23fb" 
+        fillColor: "#161616"
+        hasBorder: true
+    }
+
+    Text { // Spacing
+        text: " "
     }
 }
