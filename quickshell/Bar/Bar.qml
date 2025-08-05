@@ -23,9 +23,7 @@ Scope {
             BarBg {}
             BarContents { id: barContent }     
 
-
-
-            implicitHeight: 30
+            implicitHeight: 35
         }
 
     }

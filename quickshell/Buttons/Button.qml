@@ -21,7 +21,7 @@ Rectangle {
     }
 
     height: parent.height
-    width: textObj.width + 10
+    width: textObj.width + 15
     radius: 5
     color: fillColor
 
@@ -35,7 +35,7 @@ Rectangle {
         text: root.text
         color: textColor
         font {
-            pixelSize: 12
+            pixelSize: 13
             family: isSymbol? symbolFont : jetBrainsMono.name
         }
         anchors {

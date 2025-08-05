@@ -17,7 +17,7 @@ Row {
         text: "\uf313"
         color: "#aaaaff"
         font {
-            pixelSize: 18
+            pixelSize: 24
             family: "Symbols Nerd Font"
         }
     }
