@@ -8,17 +8,23 @@
         "$mainMod, T, exec, $terminal"
         "$mainMod, Q, killactive,"
         "$mainMod, Delete, exit,"
+        "$mainMod, E, exec, $browser"
         "$mainMod, F, exec, $fileManager"
         "$mainMod, V, togglefloating,"
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, P, pseudo, # dwindle"
-        "$mainMod, J, togglesplit, # dwindle"
+        "$mainMod, O, togglesplit, # dwindle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
+
+        "$mainMod, H, movefocus, l"
+        "$mainMod, L, movefocus, r"
+        "$mainMod, J, movefocus, u"
+        "$mainMod, K, movefocus, d"
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"
@@ -45,8 +51,8 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
 
         # Example special workspace (scratchpad)
-        "$mainMod, S, togglespecialworkspace, magic"
-        "$mainMod SHIFT, S, movetoworkspace, special:magic"
+        "$mainMod, TAB, togglespecialworkspace, magic"
+        "$mainMod SHIFT, TAB, movetoworkspace, special:magic"
 
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e-1"

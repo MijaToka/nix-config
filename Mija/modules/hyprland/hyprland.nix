@@ -9,6 +9,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
+      "$browser" = "firefox";
 
       monitor = ",preferred,auto,auto";
 
@@ -150,12 +151,13 @@
       windowrule = [
         # "supressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "float,class:kitty,title:FloatingKitty"
         # "force_xwayland, class:^(steam)$"
         # "force_xwayland, title:^(Steam.*)$"
       ];
 
       exec-once = [
-        "waybar"
+        "quickshell -p ~/.dotfiles/quickshell/shell.qml"
         "hyprpaper"
       ];
 
