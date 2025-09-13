@@ -2,6 +2,7 @@ import QtQuick
 import Quickshell
 import "../Widgets"
 import "../Buttons"
+
 Row { 
     spacing: 5
     anchors {
@@ -12,13 +13,13 @@ Row {
 
     height: parent.height - 12
 
-    PowerProfileIndicator {id:powerProfile}
+
     Power {id:battery}
 
-    Button { // CPU/GPU
-        text: " 0 \uf4bc"
-        isSymbol: false
-        }
+    CPUButton {}
+
+    RAMButton {}
+
     Button { // Audio
         text: "\uf028"
     }
@@ -30,10 +31,8 @@ Row {
         text: "\udb80\udcaf"
     }
     
-    Button { // Power profile
-        text: powerProfile.powerProfile 
-        fillColor: powerProfile.color
-    }
+    PowerProfileButton { }
+
     Button { // Battery
         text: battery.text
         isSymbol: false

@@ -1,5 +1,6 @@
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import "../Widgets"
 
 Row {
@@ -10,8 +11,6 @@ Row {
         leftMargin: 10
     }
 
-    PowerProfileIndicator {}
-
     Text {
         id: nixLogo
         text: "\uf313"
@@ -20,5 +19,18 @@ Row {
             pixelSize: 24
             family: "Symbols Nerd Font"
         }
+
+        MouseArea {
+            anchors.fill: parent
+            onClicked: {
+                openDRun.running = true
+            }
+        }
+
+        Process {
+            id: openDRun
+            command: ["wofi","--show", "drun"]
+        }
+
     }
 }

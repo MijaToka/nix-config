@@ -14,14 +14,16 @@ Rectangle {
     property bool isSymbol: true
     
     property string symbolFont: "Symbols Nerd Font Mono"
+    
+    property bool doubleWidth: false
 
     FontLoader {
         id: jetBrainsMono
-        source: "/nix/store/nq4ns1qivbcsaiml82d1hidlhy2wq1m3-home-manager-path/share/fonts/truetype/NerdFonts/JetBrainsMono/JetBrainsMonoNerdFontPropo-Regular.ttf"
+        source: "/home/mija/.nix-profile/share/fonts/truetype/NerdFonts/JetBrainsMono/JetBrainsMonoNerdFontPropo-Regular.ttf"
     }
 
     height: parent.height
-    width: textObj.width + 15
+    width: !doubleWidth ? textObj.width + 15 : textObj.width * 2 + 15
     radius: 5
     color: fillColor
 

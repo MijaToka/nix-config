@@ -8,13 +8,13 @@ Row {
         centerIn: parent
         verticalCenter: parent.verticalCenter
     }
-
+    height: parent.height-12
     HyprWorkspaces {}
 
     // If no workspaces
     Text {
         visible: Hyprland.workspaces.length === 0
-        text: "No work spaces"
+        text: " "
         color: "#ffffff"
         font.pixelSize: 12
     }

@@ -9,5 +9,5 @@ Rectangle {
         color: "#333333"
         width: 2
     }
-    radius: 15
+    radius: 10
 }
