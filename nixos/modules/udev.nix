@@ -20,7 +20,11 @@
       # Wired HORIPAD STEAM; USB
       KERNEL=="hidraw*", KERNELS=="*0F0D:01AB*", MODE="0660", TAG+="uaccess"
       KERNEL=="hidraw*", ATTRS{idVendor}=="0f0d", ATTRS{idProduct}=="01ab", MODE="0660", TAG+="uaccess"
-    '';
-};
-
-}
+      
+      # Wireless HORIPAD STEAM; Bluetooth
+      KERNEL=="hidraw*", KERNELS=="*0F0D:0196*", MODE="0660", TAG+="uaccess"
+      KERNEL=="hidraw*", ATTRS{idVendor}=="0f0d", ATTRS{idProduct}=="0196", MODE="0660", TAG+="uaccess"
+      '';
+  };
+    hardware.uinput.enable = true;
+  }
