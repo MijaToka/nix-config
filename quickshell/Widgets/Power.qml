@@ -13,7 +13,7 @@ Scope {
     property bool isCharging
     
     Timer {
-        interval: 5000
+        interval: 10000
         running: true
         repeat: true
         onTriggered: {
@@ -32,7 +32,7 @@ Scope {
         stdout: StdioCollector {
             onStreamFinished: {
                 root.battery = parseInt(this.text)
-                const batCase = root.battery / 10
+                const batCase = Math.round(root.battery / 10)
                 switch (batCase){
                     case 0:
                         root.batteryIcon = "\udb80\udc7a"
@@ -66,6 +66,7 @@ Scope {
                         break
                     default:
                         root.batteryIcon = "\udb80\udc79"
+                        break
                 }
             }
         }
