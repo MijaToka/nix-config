@@ -54,7 +54,7 @@
 
         border_size = 2;
 
-        "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
+        "col.active_border" = "rgba(6791d9ee) rgba(f5a3a5ee) 135deg";
         "col.inactive_border" = "rgba(595959aa)";
       
         resize_on_border = true;
@@ -148,10 +148,11 @@
         disable_hyprland_logo = true;
       };
 
-      windowrule = [
+      windowrulev2 = [
         # "supressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
         "float,class:kitty,title:FloatingKitty"
+        "float,class:blueman-manager"
         # "force_xwayland, class:^(steam)$"
         # "force_xwayland, title:^(Steam.*)$"
       ];
