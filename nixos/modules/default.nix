@@ -1,5 +1,6 @@
 {
 	imports = [
+		# ./battery.nix
 		./bluetooth.nix
 		./bootloader.nix
 		./firewall.nix
