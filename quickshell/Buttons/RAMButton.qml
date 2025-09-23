@@ -6,7 +6,7 @@ import Quickshell.Io
 
 Button {
     id: root
-    property bool state: true
+    property bool state: false
     text: state ? RAMStatus.ocupiedGiB+"/"+RAMStatus.totalGiB + "GiB \uefc5": RAMStatus.percentage + "% \uefc5"
     isSymbol: false
 
