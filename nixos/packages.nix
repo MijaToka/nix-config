@@ -26,16 +26,24 @@
 
 		# Editors
 		neovim
-		
+		xournalpp
+
+    # LaTeX
+    (texlive.combine {
+      inherit (texlive) scheme-basic standalone varwidth scontents xcolor;
+    }
+    )
 		# Desktop apps
 		audacity
 		rofi
 		wofi
 		mpv
 		vlc
+    slack
+    mattermost
 
 		# DE and WM stuff
-		kdePackages.kate
+		# kdePackages.kate
 		hyprland
 		hyprpaper
 		waybar
@@ -45,8 +53,11 @@
 
 		# Terminal emulators
 		kitty
-		alacritty
+    # alacritty
 
+		#Icons
+		adwaita-icon-theme
+		
 		# Wayland thingis
 
 		# Other
