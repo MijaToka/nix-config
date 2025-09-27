@@ -151,8 +151,18 @@
       windowrulev2 = [
         # "supressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        
         "float,class:kitty,title:FloatingKitty"
-        "float,class:blueman-manager"
+        "size 50% 50%,class:kitty,title:FloatingKitty"
+        "move 50% 48,class:kitty,title:FloatingKitty"
+        
+        "float,class:^.blueman-manager-wrapped$"
+        "size 25% 50%,class:^.blueman-manager-wrapped$"
+        "move 68% 48,class:^.blueman-manager-wrapped$"
+
+        "float,class:discord,initialTitle:(Discord Popout)"
+        "size 75% 75%,class:discord,initialTitle:(Discord Popout)"
+        
         # "force_xwayland, class:^(steam)$"
         # "force_xwayland, title:^(Steam.*)$"
       ];
