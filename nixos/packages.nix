@@ -10,40 +10,45 @@
 
 	environment.systemPackages = with pkgs; [
 		# CLI Utils
-		git 
+		git
 		wget 
-		file
-		tree
-		unzip
+		file # Determine file type
+		tree # Lists directories in tree structure
+		unzip # Compress and de-compress files
 		zip
-		ffmpeg
+		ffmpeg # Convert audio and video sources
 		openssl
-		fastfetch
-		cava
+		fastfetch # Display computer stats
+		neofetch
+		cava # TUI audio visualizer
 		xorg.xev
-		nh
-		usbutils
-
-		# Editors
-		neovim
-		xournalpp
+		nh # Nix commands
+		usbutils # USB commands
 
     # LaTeX
     (texlive.combine {
       inherit (texlive) scheme-basic standalone varwidth scontents xcolor;
     }
     )
+
 		# Desktop apps
-		audacity
+		audacity # Audio-mixing
 		rofi
-		wofi
-		mpv
+		wofi # App launcher
+
+		# Editors
+		neovim # Text editor
+		xournalpp # Note taking app
+
+		# Media player
+		mpv 	
 		vlc
+
+		# Messaging apps
     slack
     mattermost
 
 		# DE and WM stuff
-		# kdePackages.kate
 		hyprland
 		hyprpaper
 		waybar
@@ -51,9 +56,11 @@
 		mako
 		quickshell
 
+		# Networkmanager GUI
+		# networkmanagerapplet
+
 		# Terminal emulators
 		kitty
-    # alacritty
 
 		#Icons
 		adwaita-icon-theme
