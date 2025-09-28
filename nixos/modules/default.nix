@@ -11,6 +11,7 @@
 		./sound.nix
 		./udev.nix
 		./users.nix
+		./wacom.nix
 		./xserver.nix
 	];
 }
