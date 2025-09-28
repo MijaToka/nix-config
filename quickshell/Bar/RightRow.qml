@@ -23,13 +23,10 @@ Row {
     Button { // Audio
         text: "\uf028"
     }
-    Button { // Wifi
-        text: "\uf1eb"
-    }
 
-    Button { // Bluetooth
-        text: "\udb80\udcaf"
-    }
+    WifiButton { }
+
+    BluetoothButton { }
     
     PowerProfileButton { }
 

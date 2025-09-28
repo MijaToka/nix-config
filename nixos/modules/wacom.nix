@@ -1,4 +1,4 @@
 {
   hardware.opentabletdriver.enable = true;
-  xserver.wacom.enable = true;
+  services.xserver.wacom.enable = true;
 }

@@ -7,10 +7,9 @@
       layout = "latam";
       variant = "";
     };
-
-    # Enable touchpad in X11
-    libinput.enable = true;
-
   };
+
+  # Enable touchpad in X11
+  services.libinput.enable
 
 }

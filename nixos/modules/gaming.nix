@@ -20,7 +20,6 @@
 		winetricks
 		wineWowPackages.stable
 		wineWowPackages.waylandFull
-		neofetch
 		mangohud
 		protonup
 	];
