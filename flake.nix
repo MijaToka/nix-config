@@ -18,9 +18,14 @@
 			url = "github:NotAShelf/nvf";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
+
+		zen-browser = {
+			url = "github:youwen5/zen-browser-flake";
+			inputs.nixpkgs.follows = "nixpkgs";
+		};
 	};
 
-	outputs = { self, nixpkgs, home-manager, stylix, nvf, ... }@inputs : 
+	outputs = { self, nixpkgs, home-manager, stylix, nvf, zen-browser, ... }@inputs : 
 
 		let
 			system = "x86_64-linux"; 
@@ -35,6 +40,7 @@
 				modules = [
 					./nixos/configuration.nix
 					# inputs.home-manager.nixosModules.default
+					# zen-browser.packages.x86_64-linux.default
 				];
 			};
 		};
