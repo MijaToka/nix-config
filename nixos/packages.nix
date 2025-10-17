@@ -6,13 +6,15 @@
 	programs = {
 		firefox.enable = true;
 		hyprland.enable = true;
+		direnv.enable = true;
 	};
 
 	environment.systemPackages = with pkgs; [
 		# CLI Utils
-		git
-		wget 
+		git # Version control
+		wget # 
 		file # Determine file type
+    fzf # Fuzzy finder
 		tree # Lists directories in tree structure
 		unzip # Compress and de-compress files
 		zip
@@ -21,15 +23,17 @@
 		fastfetch # Display computer stats
 		neofetch
 		cava # TUI audio visualizer
-		xorg.xev
+		xorg.xev # Device Input testing
 		nh # Nix commands
 		usbutils # USB commands
+		direnv # Environment management (for vscode)
+		vdhcoapp # CoApp to download videos from firefox
+    zoxide # Better cd command
 
     # LaTeX
     (texlive.combine {
-      inherit (texlive) scheme-basic standalone varwidth scontents xcolor;
-    }
-    )
+		inherit (texlive) scheme-basic standalone varwidth scontents xcolor;
+	})
 
 		# Desktop apps
 		audacity # Audio-mixing
@@ -39,14 +43,16 @@
 		# Editors
 		neovim # Text editor
 		xournalpp # Note taking app
+		rnote	
+		gimp3 # Image editor
 
 		# Media player
 		mpv 	
 		vlc
 
 		# Messaging apps
-    slack
-    mattermost
+		slack
+		mattermost
 
 		# DE and WM stuff
 		hyprland
