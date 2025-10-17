@@ -1,6 +1,6 @@
 {
   vim = {
-    
+
     viAlias = true;
     vimAlias = true;
 
@@ -8,11 +8,6 @@
       enable = false;
       level = 16;
       logFile = "/tmp/nvim.log";
-    };
-
-    theme = {
-      enable = true;
-      transparent = true;
     };
 
     lsp = {
@@ -23,17 +18,17 @@
       lightbulb.enable = true;
       lspsaga.enable = false;
       trouble.enable = true;
-      lspSignature.enable = true;
+      lspSignature.enable = false;
       otter-nvim.enable = true;
       nvim-docs-view.enable = true;
     };
-    
+
     autopairs.nvim-autopairs.enable = true;
-    autocomplete.blink.enable = true;
+    autocomplete.blink-cmp.enable = true;
     snippets.luasnip.enable = true;
 
     filetree = {
-      neotree.enable = true;
+      neo-tree.enable = true;
     };
 
     tabline = {
@@ -41,6 +36,36 @@
     };
 
     treesitter.context.enable = true;
+    telescope.enable = true;
+
+    git = {
+      enable = true;
+      gitsigns = {
+        enable = true;
+        codeActions.enable = true;
+      };
+      neogit.enable = true;
+    };
+
+    minimap = {
+      minimap-vim.enable = true;
+      codewindow.enable = true;
+    };
+
+    dashboard = {
+      dashboard-nvim.enable = false;
+      alpha.enable = true;
+    };
+
+    notify = {
+      nvim-notify.enable = true;
+    };
+
+    projects = {
+      project-nvim.enable = true;
+    };
+
+    utility = { };
 
     debugger = {
       nvim-dap = {
@@ -59,7 +84,6 @@
       clang.enable = true;
       bash.enable = true;
       css.enable = true;
-      
     };
 
     visuals = {
@@ -83,6 +107,16 @@
       };
     };
 
+    terminal = {
+      toggleterm = {
+        enable = true;
+        lazygit.enable = true;
+        setupOpts = {
+          direction = "float";
+        };
+      };
+    };
+
     options = {
       tabstop = 2;
       shiftwidth = 2;
@@ -90,3 +124,4 @@
     };
   };
 }
+
