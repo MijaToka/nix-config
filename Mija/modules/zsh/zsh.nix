@@ -1,10 +1,11 @@
-{ config, ... } : {
+{ config, lib, ... } : {
   programs.zsh = {
 
     enable = true;
     
     enableCompletion = true;
     autosuggestion.enable = true;
+    autocd = true;
     syntaxHighlighting.enable = true;
 
     shellAliases = let 
@@ -32,5 +33,16 @@
       path = "${config.xdg.dataHome}/zsh/history";
     };
 
+    oh-my-zsh = {
+      enable = true;
+      plugins = [
+        "git"  
+        "sudo"
+      ];
+    };
+    initContent = ''
+       zstyle ':completion:*' matcher-list 'm:{a-z}={a-zA-Z}'
+    eval "$(zoxide init --cmd cd zsh)"
+    '';
   };
 }
