@@ -1,14 +1,17 @@
 {
   imports = [
-    ./git.nix 
+    ./hyprland
+    ./nvf
     ./swaync
     ./wofi
-    ./hyprland
-    # ./quickshell.nix
-    ./zsh.nix
+    ./zsh
+
     ./fonts.nix
-    ./stylix.nix
+    ./fzf.nix 
+    ./git.nix 
     ./kitty.nix
-    ./nvf.nix
+    # ./quickshell.nix
+    ./stylix.nix
+    # ./vscode.nix
   ];
 }
