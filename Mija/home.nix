@@ -3,6 +3,7 @@
     ./modules
   ];
 
+  nixpkgs.config.allowUnfree = true;
   home = {
     username = "mija";
     homeDirectory = "/home/mija";
