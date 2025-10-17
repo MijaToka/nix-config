@@ -26,12 +26,15 @@
 	};
 
 	outputs = { self, nixpkgs, home-manager, stylix, nvf, zen-browser, ... }@inputs : 
+	let
+		system = "x86_64-linux"; 
+	in {
 
-		let
-			system = "x86_64-linux"; 
-		in
-		
-		{
+		packages.${system}.default = (
+			nvf.lib.neovimConfiguration {
+				pkgs = nixpkgs.legacyPackages.${system};
+				modules = [./nvf_config];
+			}).neovim;	
 
 		nixosConfigurations = {
 			nixos = nixpkgs.lib.nixosSystem {
@@ -54,7 +57,6 @@
 					nvf.homeManagerModules.nvf
 				];
 			};
-
-			};
+		};
 	};
 }
