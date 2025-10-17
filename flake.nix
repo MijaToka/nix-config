@@ -30,9 +30,9 @@
 		system = "x86_64-linux"; 
 	in {
 
-		packages.${system}.default = (
+		packages."x86_64-linux".default = (
 			nvf.lib.neovimConfiguration {
-				pkgs = nixpkgs.legacyPackages.${system};
+				pkgs = nixpkgs.legacyPackages."x86_64-linux";
 				modules = [./nvf_config];
 			}).neovim;	
 
