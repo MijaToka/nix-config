@@ -1,13 +1,14 @@
 {
   imports = [
-    # ./battery.nix
+    ./battery.nix
     ./bluetooth.nix
     ./bootloader.nix
+    ./displayManager.nix
     ./drives.nix
     ./firewall.nix
     ./gaming.nix
     ./garbage_collection.nix
-    ./kde.nix
+    # ./kde.nix
     ./openGL.nix
     ./sound.nix
     ./udev.nix
