@@ -8,10 +8,9 @@ Singleton {
     id: root
     property string powerProfileIcon
     property string color
-    property string nextState
     
     Timer {
-        interval: 500
+        interval: 5000
         running: true
         repeat: true
         onTriggered: checkProfile.running = true
@@ -19,31 +18,27 @@ Singleton {
 
     Process {
         id: checkProfile
-        command: ["powerprofilesctl","get"]
+        command: ["tlp-stat","-m"]
         running: true
 
         stdout: StdioCollector {
             onStreamFinished: {
                 const trimmedtext = this.text.trim()
                 switch (trimmedtext) {
-                    case "performance":
+                    case "AC":
                         root.powerProfileIcon = "\udb85\udc0b"
                         root.color = "#B50000"
-                        root.nextState = "power-saver"
                         break
                     case "balanced":
                         root.powerProfileIcon = "\uf24e"
                         root.color = "#4F5FAE"
-                        root.nextState = "performance"
                         break
-                    case "power-saver":
+                    case "battery":
                         root.powerProfileIcon = "\udb80\udf2a"
                         root.color = "#4AA04F"
-                        root.nextState = "balanced"
                         break
                     default:
                         root.powerProfileIcon = "\udb84\udd05"
-                        root.nextState = "balanced"
                         break
                 }
             }

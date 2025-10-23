@@ -12,17 +12,4 @@ Button {
     text: PowerProfileIndicator.powerProfileIcon
     fillColor: PowerProfileIndicator.color
 
-    MouseArea {
-        anchors.fill: parent
-        onClicked: {
-            changePower.running = true
-        }
-    }
-
-    Process {
-        id: changePower
-        
-        command: ["powerprofilesctl","set",PowerProfileIndicator.nextState]
-        running: false
-    }
 }

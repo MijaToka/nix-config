@@ -9,7 +9,7 @@ Scope {
     property int battery
     property string batteryIcon
     property string chargingIcon
-    property string text: battery + "% " + batteryIcon + " " +  chargingIcon
+    property string text: battery + "% " + batteryIcon 
     property bool isCharging
     
     Timer {
@@ -20,7 +20,6 @@ Scope {
             capacity.running = true
             energy.running = true
             power.running = true
-            charging.running = true
         }
     }
 
@@ -83,16 +82,4 @@ Scope {
 
     }
 
-    Process {
-        id: charging
-        running: true
-        command: ["cat","/sys/class/power_supply/ADP1/online"]
-
-        stdout: StdioCollector {
-            onStreamFinished: {
-                root.isCharging = parseInt(this.text)
-                root.chargingIcon = root.isCharging ? "\udb85\udc0b" : ""
-            }
-        }
-    }
 }
