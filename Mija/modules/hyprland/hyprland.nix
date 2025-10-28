@@ -9,7 +9,7 @@
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
-      "$browser" = "firefox";
+      "$browser" = "zen";
 
       monitor = ",preferred,auto,auto";
 
@@ -26,7 +26,7 @@
       #   disable_logs = false;
       #   enable_std_out_logs = true;
       # };
-    
+
       xwayland.force_zero_scaling = true;
 
       input = {
@@ -44,8 +44,8 @@
       };
 
       device = {
-          name = "asue140d:00-04f3:31b9-touchpad";
-          sensitivity = 0.25;
+        name = "asue140d:00-04f3:31b9-touchpad";
+        sensitivity = 0.25;
       };
 
       general = {
@@ -56,7 +56,7 @@
 
         "col.active_border" = "rgba(6791d9ee) rgba(f5a3a5ee) 135deg";
         "col.inactive_border" = "rgba(595959aa)";
-      
+
         resize_on_border = true;
         extend_border_grab_area = 20;
         # hover_icon_on_border = true; Default true
@@ -73,7 +73,6 @@
 
         active_opacity = 1.0;
         inactive_opacity = 1.0;
-
 
         blur = {
           enabled = true;
@@ -93,7 +92,7 @@
         # shadow_render_power = 3;
         # "col.shadow" = "rgba(1a1a1aee)";
       };
-    
+
       animations = {
         enabled = true;
         workspace_wraparound = true;
@@ -151,18 +150,18 @@
       windowrulev2 = [
         # "supressevent maximize, class:.*"
         "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
-        
+
         "float,class:kitty,title:FloatingKitty"
         "size 50% 50%,class:kitty,title:FloatingKitty"
         "move 50% 48,class:kitty,title:FloatingKitty"
-        
+
         "float,class:^.blueman-manager-wrapped$"
         "size 25% 50%,class:^.blueman-manager-wrapped$"
         "move 68% 48,class:^.blueman-manager-wrapped$"
 
         "float,class:discord,initialTitle:(Discord Popout)"
         "size 75% 75%,class:discord,initialTitle:(Discord Popout)"
-        
+
         # "force_xwayland, class:^(steam)$"
         # "force_xwayland, title:^(Steam.*)$"
       ];
@@ -175,3 +174,4 @@
     };
   };
 }
+
