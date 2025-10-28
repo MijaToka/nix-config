@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   nixpkgs.config = {
     allowUnfree = true;
@@ -11,84 +11,87 @@
     zsh.enable = true;
   };
 
-  environment.systemPackages = with pkgs; [
-    # CLI Utils
-    git # Version control
-    lazygit
-    wget
-    file # Determine file type
-    fzf # Fuzzy finder
-    tree # Lists directories in tree structure
-    unzip # Compress and de-compress files
-    zip
-    ffmpeg # Convert audio and video sources
-    openssl
-    fastfetch # Display computer stats
-    neofetch
-    cava # TUI audio visualizer
-    xorg.xev # Device Input testing
-    nh # Nix commands
-    usbutils # USB commands
-    direnv # Environment management (for vscode)
-    vdhcoapp # CoApp to download videos from firefox
-    zoxide # Better cd command
+  environment.systemPackages =
+    with pkgs;
+    [
+      # CLI Utils
+      git # Version control
+      lazygit
+      wget
+      file # Determine file type
+      fzf # Fuzzy finder
+      tree # Lists directories in tree structure
+      unzip # Compress and de-compress files
+      zip
+      ffmpeg # Convert audio and video sources
+      openssl
+      fastfetch # Display computer stats
+      neofetch
+      cava # TUI audio visualizer
+      xorg.xev # Device Input testing
+      nh # Nix commands
+      usbutils # USB commands
+      direnv # Environment management (for vscode)
+      vdhcoapp # CoApp to download videos from firefox
+      zoxide # Better cd command
 
-    # LaTeX
-    (texlive.combine {
-      inherit (texlive)
-        scheme-basic
-        standalone
-        varwidth
-        scontents
-        xcolor
-        ;
-    })
+      # LaTeX
+      (texlive.combine {
+        inherit (texlive)
+          scheme-basic
+          standalone
+          varwidth
+          scontents
+          xcolor
+          ;
+      })
 
-    # Desktop apps
-    audacity # Audio-mixing
-    rofi
-    wofi # App launcher
+      # Desktop apps
+      audacity # Audio-mixing
+      rofi
+      wofi # App launcher
 
-    # Editors
-    neovim # Text editor
-    xournalpp # Note taking app
-    rnote
-    gimp3 # Image editor
+      # Editors
+      neovim # Text editor
+      xournalpp # Note taking app
+      rnote
+      gimp3 # Image editor
 
-    # Media player
-    mpv
-    vlc
+      # Media player
+      mpv
+      vlc
 
-    # Messaging apps
-    slack
-    mattermost
+      # Messaging apps
+      slack
+      mattermost
 
-    # DE and WM stuff
-    hyprland
-    hyprpaper
-    waybar
-    brightnessctl
-    mako
-    quickshell
-    kdePackages.dolphin
+      # DE and WM stuff
+      hyprland
+      hyprpaper
+      waybar
+      brightnessctl
+      mako
+      quickshell
+      kdePackages.dolphin
 
-    # Networkmanager GUI
-    networkmanagerapplet
+      # Networkmanager GUI
+      networkmanagerapplet
 
-    # Terminal emulators
-    kitty
+      # Terminal emulators
+      kitty
 
-    #Icons
-    adwaita-icon-theme
+      #Icons
+      adwaita-icon-theme
 
-    # Wayland thingis
+      # Wayland thingis
 
-    # Other
-    home-manager
+      # Other
+      home-manager
 
-    # Device drivers
-    sc-controller
-  ];
+      # Device drivers
+      sc-controller
+    ]
+    ++ [ inputs.zen-browser.packages."${system}".default ];
 
   # fonts.packages = with pkgs; [
   # 	nerdfonts
