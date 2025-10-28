@@ -23,6 +23,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    my-nvf-config = {
+      url = "github:MijaToka/nvf-config";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -52,8 +57,13 @@
           inherit system;
           modules = [
             ./nixos/configuration.nix
+            (
+              { pkgs, ... }:
+              {
+                environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
+              }
+            )
             # inputs.home-manager.nixosModules.default
-            #zen-browser.packages.${system}.default;
           ];
         };
       };
