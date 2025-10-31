@@ -1,10 +1,13 @@
 {
   programs.git = {
     enable = true;
-    userName = "MijaToka";
-    userEmail = "mijail.tokarev@ug.uchile.cl";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "MijaToka";
+        email = "mijail.tokarev@ug.uchile.cl";
+      };
       core.Editor = "nvim";
     };
   };
 }
+

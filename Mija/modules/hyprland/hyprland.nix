@@ -22,10 +22,10 @@
         "XCURSOR_SIZE,24"
       ];
 
-      # debug = {
-      #   disable_logs = false;
-      #   enable_std_out_logs = true;
-      # };
+      debug = {
+        disable_logs = false;
+        #   enable_std_out_logs = true;
+      };
 
       xwayland.force_zero_scaling = true;
 
@@ -132,8 +132,9 @@
       master.new_status = "master";
 
       gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
+        gesture = [
+          "3,horizontal,workspace"
+        ];
         workspace_swipe_invert = true;
         workspace_swipe_distance = 200;
         workspace_swipe_forever = false;
@@ -143,7 +144,7 @@
         animate_manual_resizes = true;
         animate_mouse_windowdragging = true;
         enable_swallow = true;
-        render_ahead_of_time = false;
+        # render_ahead_of_time = false;
         disable_hyprland_logo = true;
       };
 
@@ -174,4 +175,3 @@
     };
   };
 }
-

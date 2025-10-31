@@ -1,4 +1,4 @@
-{ pkgs, inputs, stylix, ... }:{
+{
   imports = [
     ./modules
   ];
@@ -10,3 +10,4 @@
     stateVersion = "25.05";
   };
 }
+

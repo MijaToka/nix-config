@@ -18,7 +18,7 @@
         obsidian
         zoom-us
         spotify
-        whatsapp-for-linux
+        wasistlos
         audacity
       ];
     };

@@ -45,11 +45,11 @@
     in
     {
 
-      packages.${system}.default =
-        (nvf.lib.neovimConfiguration {
-          pkgs = nixpkgs.legacyPackages.${system};
-          modules = [ ./nvf_config ];
-        }).neovim;
+      #       packages.${system}.default =
+      #         (nvf.lib.neovimConfiguration {
+      #           pkgs = nixpkgs.legacyPackages.${system};
+      #           modules = [ ./nvf_config ];
+      #         }).neovim;
 
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
@@ -74,7 +74,7 @@
           modules = [
             ./Mija/home.nix
             stylix.homeManagerModules.stylix
-            nvf.homeManagerModules.nvf
+            # nvf.homeManagerModules.nvf
           ];
         };
       };
