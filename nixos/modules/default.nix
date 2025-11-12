@@ -9,6 +9,7 @@
     ./gaming.nix
     ./garbage_collection.nix
     # ./kde.nix
+    ./networking.nix
     ./openGL.nix
     ./sound.nix
     ./udev.nix
