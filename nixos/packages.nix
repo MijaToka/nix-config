@@ -65,6 +65,7 @@
       # Messaging apps
       slack
       mattermost
+      mattermost-desktop
 
       # DE and WM stuff
       hyprland
