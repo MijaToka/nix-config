@@ -20,9 +20,7 @@ Row {
 
     RAMButton {}
 
-    Button { // Audio
-        text: "\uf028"
-    }
+    VolumeButton { }
 
     WifiButton { }
 

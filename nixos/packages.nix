@@ -56,6 +56,7 @@
       xournalpp # Note taking app
       rnote
       gimp3 # Image editor
+      krita
 
       # Media player
       mpv

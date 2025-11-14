@@ -49,7 +49,7 @@ Singleton {
                         root.color = "#4F5FAE"
                         break
                     case "powersave":
-                    root.powerProfileIcon = root.turbo ? "\ubd86\udd05" : "\udb80\udf2a"
+                    root.powerProfileIcon = root.turbo ? "\udb86\udd05" : "\udb80\udf2a"
                         root.color = "#4AA04F"
                         break
                     default:
