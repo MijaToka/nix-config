@@ -20,7 +20,6 @@
         spotify
         wasistlos
         audacity
-        osu-lazer
       ];
     };
   };
