@@ -93,7 +93,12 @@
       # Device drivers
       sc-controller
     ]
-    ++ [ inputs.zen-browser.packages."${system}".default ];
+    ++ (with inputs.nixpkgs-stable; [
+      nixpkgs-stable.rnote
+    ])
+    ++ (with inputs; [
+      zen-browser.packages."${system}".default
+    ]);
 
   # fonts.packages = with pkgs; [
   # 	nerdfonts
