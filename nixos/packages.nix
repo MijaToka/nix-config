@@ -94,7 +94,7 @@
       sc-controller
     ]
     ++ (with inputs.nixpkgs-stable; [
-      nixpkgs-stable.rnote
+      rnote
     ])
     ++ (with inputs; [
       zen-browser.packages."${system}".default
