@@ -34,6 +34,7 @@
       direnv # Environment management (for vscode)
       vdhcoapp # CoApp to download videos from firefox
       zoxide # Better cd command
+      zathura # Minimal file viewer
 
       # LaTeX
       (texlive.combine {
@@ -54,7 +55,7 @@
       # Editors
       neovim # Text editor
       xournalpp # Note taking app
-      rnote
+      # rnote ## Moved to stable branch
       gimp3 # Image editor
       krita
 
@@ -85,8 +86,6 @@
       #Icons
       adwaita-icon-theme
 
-      # Wayland thingis
-
       # Other
       home-manager
 
@@ -99,8 +98,4 @@
     ++ (with inputs; [
       zen-browser.packages."${system}".default
     ]);
-
-  # fonts.packages = with pkgs; [
-  # 	nerdfonts
-  # ];
 }
