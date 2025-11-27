@@ -21,10 +21,11 @@
       lazygit
       wget # Download files from CLI
 
-      ## Navigation
+      ## Navigation & productivity
       fzf # Fuzzy finder
       tree # Lists directories in tree structure
       zoxide # Better cd command
+      tmux # Terminal multiplexer
 
       ## File management
       file # Determine file type
@@ -42,7 +43,6 @@
       xorg.xev # Device Input testing
       nh # Nix commands
       usbutils # USB commands
-      zathura # Minimal file viewer
 
       # LaTeX
       (texlive.combine {
@@ -55,14 +55,10 @@
           ;
       })
 
-      # Desktop apps
-      audacity # Audio-mixing
-      rofi
-      wofi # App launcher
-
       # Editors
-      ## Text
+      ## Text editor
       neovim
+      zathura # Minimal file viewer
 
       ## Notetaking
       xournalpp
@@ -71,6 +67,11 @@
       ## Image editor
       gimp3
       krita
+
+      ## Audio editor
+      audacity # Audio-mixing
+      wofi # App launcher
+      # rofi
 
       # Media player
       mpv
