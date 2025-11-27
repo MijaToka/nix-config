@@ -15,25 +15,33 @@
     with pkgs;
     [
       # CLI Utils
-      git # Version control
+
+      ## Version control
+      git
       lazygit
-      wget
-      file # Determine file type
+      wget # Download files from CLI
+
+      ## Navigation
       fzf # Fuzzy finder
       tree # Lists directories in tree structure
+      zoxide # Better cd command
+
+      ## File management
+      file # Determine file type
       unzip # Compress and de-compress files
       zip
       ffmpeg # Convert audio and video sources
       openssl
-      fastfetch # Display computer stats
+
+      ## Stat display
+      fastfetch
       neofetch
       cava # TUI audio visualizer
+
+      ## Utilities
       xorg.xev # Device Input testing
       nh # Nix commands
       usbutils # USB commands
-      direnv # Environment management (for vscode)
-      vdhcoapp # CoApp to download videos from firefox
-      zoxide # Better cd command
       zathura # Minimal file viewer
 
       # LaTeX
@@ -53,10 +61,15 @@
       wofi # App launcher
 
       # Editors
-      neovim # Text editor
-      xournalpp # Note taking app
+      ## Text
+      neovim
+
+      ## Notetaking
+      xournalpp
       # rnote ## Moved to stable branch
-      gimp3 # Image editor
+
+      ## Image editor
+      gimp3
       krita
 
       # Media player
@@ -69,13 +82,13 @@
       mattermost-desktop
 
       # DE and WM stuff
-      hyprland
-      hyprpaper
-      waybar
+      hyprland # WM
+      hyprpaper # WM wall paper (not being used?)
+      #  waybar # Bar for WM
       brightnessctl
-      mako
+      mako # Notification daemon
       quickshell
-      kdePackages.dolphin
+      kdePackages.dolphin # File manager
 
       # Networkmanager GUI
       networkmanagerapplet
@@ -88,6 +101,8 @@
 
       # Other
       home-manager
+      direnv # Environment management (for vscode)
+      vdhcoapp # CoApp to download videos from firefox
 
       # Device drivers
       sc-controller
