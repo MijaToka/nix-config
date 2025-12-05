@@ -23,6 +23,7 @@
     wineWowPackages.waylandFull
     mangohud
     protonup-ng
+
+    prismlauncher # Minecraft
   ];
 }
-
