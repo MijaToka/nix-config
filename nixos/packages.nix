@@ -8,6 +8,7 @@
     firefox.enable = true;
     hyprland.enable = true;
     direnv.enable = true;
+    localsend.enable = true;
     zsh.enable = true;
   };
 
@@ -59,6 +60,7 @@
       ## Text editor
       neovim
       zathura # Minimal file viewer
+      sioyek # Zathura alternative
 
       ## Notetaking
       xournalpp
