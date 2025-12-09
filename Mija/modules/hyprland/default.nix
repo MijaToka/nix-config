@@ -1,12 +1,11 @@
 {
-
-imports = [
-  ./hyprland.nix
-  ./hyprpaper.nix
-  ./hyprlock.nix
-  ./hypridle.nix
-  ./binds.nix
-  # ./waybar.nix
-];
-
+  imports = [
+    ./hypridle.nix
+    ./hyprland.nix
+    ./hyprlock.nix
+    ./hyprpaper.nix
+    ./hyprshot.nix
+    ./hyprsunset.nix
+    ./binds.nix
+  ];
 }
