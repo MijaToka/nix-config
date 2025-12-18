@@ -31,6 +31,7 @@
       ## File management
       file # Determine file type
       unzip # Compress and de-compress files
+      yazi # Terminal file manager
       zip
       ffmpeg # Convert audio and video sources
       openssl
@@ -87,7 +88,6 @@
       # DE and WM stuff
       hyprland # WM
       hyprpaper # WM wall paper (not being used?)
-      #  waybar # Bar for WM
       brightnessctl
       mako # Notification daemon
       quickshell
