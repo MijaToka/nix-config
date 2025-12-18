@@ -31,7 +31,7 @@
   services.openssh.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Paris";
+  time.timeZone = "America/Santiago";
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
