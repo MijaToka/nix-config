@@ -6,6 +6,10 @@
 
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
 
+    nixpkgs-old-gtk = {
+      url = "github.com/NixOS/nixpkgs/6d674616a4c9fb815c2599c6615e3c34b6027cee";
+      flake = false;
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";

@@ -110,7 +110,7 @@
       # Device drivers
       sc-controller
     ]
-    ++ (with inputs.nixpkgs-stable; [
+    ++ (with inputs.nixpkgs-old-gtk; [
       rnote
     ])
     ++ (with inputs; [
