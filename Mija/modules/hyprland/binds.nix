@@ -6,6 +6,9 @@
       # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
       bind = [
         "$mainMod, T, exec, $terminal"
+        "$mainMod, Return, exec, $terminal"
+        "$mainMod SHIFT, Escape, exec, systemctl suspend"
+        "$mainMod, Escape, exec, loginctl lock-session"
         "$mainMod, Q, killactive,"
         "$mainMod, Delete, exit,"
         "$mainMod, E, exec, $browser"
