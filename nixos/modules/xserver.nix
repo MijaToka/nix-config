@@ -1,7 +1,7 @@
 {
   services.xserver = {
     enable = true;
-  
+
     # Keymap for X11
     xkb = {
       layout = "latam";
@@ -13,3 +13,4 @@
   services.libinput.enable = true;
 
 }
+
