@@ -1,5 +1,5 @@
 {
-  services.displayManager.cosmic = {
+  services.desktopManager.cosmic = {
     enable = true;
     xwayland.enable = true;
   };
