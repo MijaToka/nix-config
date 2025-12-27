@@ -15,6 +15,7 @@
     ./openGL.nix
     ./osu.nix
     ./sound.nix
+    ./systemd.nix
     ./udev.nix
     ./users.nix
     ./wacom.nix
