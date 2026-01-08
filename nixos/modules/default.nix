@@ -7,6 +7,7 @@
     ./custom-services.nix
     ./displayManager.nix
     ./drives.nix
+    ./environment.nix
     ./firewall.nix
     ./gaming.nix
     ./garbage_collection.nix

@@ -14,5 +14,6 @@
     ./stylix.nix
     # ./vscode.nix
     ./udiskie.nix
+    ./xdg.nix
   ];
 }
