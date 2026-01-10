@@ -117,6 +117,7 @@
     ++ (with inputs.nixpkgs-old-gtk; [
       rnote
     ])
+    ++ (with inputs.nixpkgs-unstable; [ osu-lazer-bin ])
     ++ (with inputs; [
       zen-browser.packages."${system}".default
     ]);

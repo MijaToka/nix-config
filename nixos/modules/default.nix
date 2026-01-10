@@ -14,7 +14,7 @@
     # ./kde.nix
     ./networking.nix
     ./openGL.nix
-    ./osu.nix
+    # ./osu.nix
     ./sound.nix
     ./systemd.nix
     ./udev.nix
