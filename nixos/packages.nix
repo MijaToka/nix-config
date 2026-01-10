@@ -10,6 +10,10 @@
     direnv.enable = true;
     localsend.enable = true;
     zsh.enable = true;
+    yazi = {
+      enable = true;
+      settings.yazi = { };
+    };
   };
 
   environment.systemPackages =
@@ -31,7 +35,6 @@
       ## File management
       file # Determine file type
       unzip # Compress and de-compress files
-      yazi # Terminal file manager
       zip
       ffmpeg # Convert audio and video sources
       openssl
@@ -67,9 +70,10 @@
       xournalpp
       # rnote ## Moved to stable branch
 
-      ## Image editor
+      ## Image editor/viewer
       gimp3
       krita
+      qimgv
 
       ## Audio editor
       audacity # Audio-mixing
