@@ -3,7 +3,10 @@
   networking = {
 
     # Enable networking
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      wifi.powersave = true;
+    };
 
     hostName = "nixos"; # Define your hostname.
 
