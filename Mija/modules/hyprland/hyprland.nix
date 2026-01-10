@@ -53,6 +53,11 @@
           kb_layout = "us";
           kb_variant = "altgr-intl";
         }
+        {
+          name = "keychron-keychron-k2-he-keyboard";
+          kb_layout = "us";
+          kb_variant = "altgr-intl";
+        }
       ];
 
       general = {
