@@ -2,9 +2,9 @@
   description = "Nixos config flake";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
     nixpkgs-old-gtk = {
       url = "github.com/NixOS/nixpkgs/6d674616a4c9fb815c2599c6615e3c34b6027cee";
@@ -50,13 +50,6 @@
       system = "x86_64-linux";
     in
     {
-
-      #       packages.${system}.default =
-      #         (nvf.lib.neovimConfiguration {
-      #           pkgs = nixpkgs.legacyPackages.${system};
-      #           modules = [ ./nvf_config ];
-      #         }).neovim;
-
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
@@ -69,7 +62,6 @@
                 environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
               }
             )
-            # inputs.home-manager.nixosModules.default
           ];
         };
       };
@@ -80,7 +72,6 @@
           modules = [
             ./Mija/home.nix
             stylix.homeManagerModules.stylix
-            # nvf.homeManagerModules.nvf
           ];
         };
       };
