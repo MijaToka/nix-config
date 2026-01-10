@@ -1,3 +1,4 @@
+{ lib, ... }:
 {
   networking = {
 
@@ -7,7 +8,7 @@
     hostName = "nixos"; # Define your hostname.
 
     wireless = {
-      enable = false; # Enables wireless support via wpa_supplicant.
+      enable = lib.mkDefault false; # Enables wireless support via wpa_supplicant.
       iwd.enable = false;
     };
   };
