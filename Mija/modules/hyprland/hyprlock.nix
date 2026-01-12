@@ -1,6 +1,8 @@
-{ config, ... }: let
+{ config, ... }:
+let
   base16Scheme = config.stylix.base16Scheme;
-in{
+in
+{
   programs.hyprlock = {
     enable = true;
     settings = {
@@ -11,7 +13,7 @@ in{
         ignore_empty_input = true;
         text_trim = true;
         fractional_scaling = 2;
-        fail_timeout = 1000; #ms
+        fail_timeout = 1000; # ms
         # no_fade_in = false;
       };
 
@@ -42,7 +44,7 @@ in{
           enabled = true;
           ready_message = "Scan fingerprint to unlock";
           present_message = "Scanning fingerprint";
-          retry_delay = 250; #ms
+          retry_delay = 250; # ms
         };
       };
 
@@ -56,7 +58,7 @@ in{
           inner_color = "rgb(40, 40, 40)";
           outer_color = "rgb(60, 56, 54)";
           outline_thickness = 5;
-          placeholder_text = "sussy baka";
+          placeholder_text = "Enter password";
           shadow_passes = 1;
         }
       ];
