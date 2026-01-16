@@ -49,17 +49,6 @@
       nh # Nix commands
       usbutils # USB commands
 
-      # LaTeX
-      (texlive.combine {
-        inherit (texlive)
-          scheme-basic
-          standalone
-          varwidth
-          scontents
-          xcolor
-          ;
-      })
-
       # Editors
       ## Text editor
       neovim
