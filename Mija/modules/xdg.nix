@@ -17,6 +17,7 @@
       mpv = {
         name = "mpv Media Player";
         exec = "${pkgs.mpv}/bin/mpv";
+        icon = "mpv";
       };
     };
   };
