@@ -43,6 +43,7 @@
       fastfetch
       neofetch
       cava # TUI audio visualizer
+      htop
 
       ## Utilities
       xorg.xev # Device Input testing
