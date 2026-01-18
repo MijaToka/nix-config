@@ -13,7 +13,7 @@ in
         ignore_empty_input = true;
         text_trim = true;
         fractional_scaling = 2;
-        fail_timeout = 1000; # ms
+        fail_timeout = 500; # ms
         # no_fade_in = false;
       };
 
