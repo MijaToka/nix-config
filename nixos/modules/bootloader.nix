@@ -22,6 +22,8 @@
       ];
     };
 
+    tmp.cleanOnBoot = true;
+
     # Enable Silent Boot
     consoleLogLevel = 3;
     initrd.verbose = false;
