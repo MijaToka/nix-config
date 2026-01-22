@@ -8,6 +8,7 @@
     ./displayManager.nix
     ./drives.nix
     ./environment.nix
+    ./fingerprint.nix
     ./firewall.nix
     ./gaming.nix
     ./garbage_collection.nix
