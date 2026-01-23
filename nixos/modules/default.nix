@@ -4,7 +4,6 @@
     ./bluetooth.nix
     ./bootloader.nix
     # ./cosmic.nix
-    ./custom-services.nix
     ./displayManager.nix
     ./drives.nix
     ./environment.nix

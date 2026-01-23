@@ -18,7 +18,6 @@
       timeout-low = 5;
       timeout-critical = 0;
 
-
       widgets = [
         "inhibitors"
         "dnd"
@@ -28,21 +27,21 @@
       widgets-config = {
         title = {
           text = "notifications";
-	  clear-all-button = true;
-	  button-text = "Clear All";
+          clear-all-button = true;
+          button-text = "Clear All";
         };
         dnd = {
-	  enabled = true;
+          enabled = true;
           text = "Do not Disturb";
         };
         mpris = {
-	  enabled = true;
-          image-size = 60;
-	  blur = true;
-        };
-	inhibitors = {
           enabled = true;
-	};
+          image-size = 60;
+          blur = true;
+        };
+        inhibitors = {
+          enabled = true;
+        };
       };
     };
   };

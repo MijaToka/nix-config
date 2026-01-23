@@ -11,6 +11,4 @@
 
   # Enable touchpad in X11
   services.libinput.enable = true;
-
 }
-

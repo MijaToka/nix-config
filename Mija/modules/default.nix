@@ -1,7 +1,6 @@
 {
   imports = [
     ./hyprland
-    # ./nvf
     ./swaync
     ./wofi
     ./zsh

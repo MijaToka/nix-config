@@ -5,7 +5,6 @@
     xwayland.enable = true;
 
     settings = {
-
       "$terminal" = "kitty";
       "$fileManager" = "dolphin";
       "$menu" = "wofi --show drun";
@@ -183,7 +182,6 @@
         "quickshell -p ~/.dotfiles/quickshell/shell.qml"
         "hyprpaper"
       ];
-
     };
   };
 }

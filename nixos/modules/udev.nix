@@ -29,4 +29,3 @@
   };
   hardware.uinput.enable = true;
 }
-

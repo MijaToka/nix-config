@@ -15,31 +15,34 @@
     "flakes"
   ];
 
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  services = {
+    # Enable the OpenSSH daemon.
+    openssh.enable = true;
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
+    # Set your time zone.
+    # time.timeZone = "Europe/Paris";
+    automatic-timezoned.enable = true;
 
-  # Set your time zone.
-  # time.timeZone = "Europe/Paris";
-  services.automatic-timezoned.enable = true;
+    # Enable CUPS to print documents.
+    printing.enable = true;
+  };
 
   # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
 
-  i18n.extraLocaleSettings = {
-    LC_ALL = "es_CL.UTF-8";
-    # LC_ADDRESS = "es_CL.UTF-8";
-    # LC_IDENTIFICATION = "es_CL.UTF-8";
-    # LC_MEASUREMENT = "es_CL.UTF-8";
-    # LC_MONETARY = "es_CL.UTF-8";
-    # LC_NAME = "es_CL.UTF-8";
-    # LC_NUMERIC = "es_CL.UTF-8";
-    # LC_PAPER = "es_CL.UTF-8";
-    # LC_TELEPHONE = "es_CL.UTF-8";
-    # LC_TIME = "es_CL.UTF-8";
+    extraLocaleSettings = {
+      LC_ALL = "es_CL.UTF-8";
+      # LC_ADDRESS = "es_CL.UTF-8";
+      # LC_IDENTIFICATION = "es_CL.UTF-8";
+      # LC_MEASUREMENT = "es_CL.UTF-8";
+      # LC_MONETARY = "es_CL.UTF-8";
+      # LC_NAME = "es_CL.UTF-8";
+      # LC_NUMERIC = "es_CL.UTF-8";
+      # LC_PAPER = "es_CL.UTF-8";
+      # LC_TELEPHONE = "es_CL.UTF-8";
+      # LC_TIME = "es_CL.UTF-8";
+    };
   };
 
   # Allow unfree packages
@@ -47,9 +50,6 @@
 
   # Configure console keymap
   console.keyMap = "la-latin1";
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

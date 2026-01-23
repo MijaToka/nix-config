@@ -13,4 +13,3 @@
     nerd-fonts.jetbrains-mono
   ];
 }
-

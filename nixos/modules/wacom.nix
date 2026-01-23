@@ -1,4 +1,3 @@
-{ pkgs, lib, ... }:
 {
   # services.opentabletdriver = {
   #   enable = true;
@@ -8,5 +7,4 @@
   # systemd.services.opentabletdriver.wantedBy = lib.mkForce [ ];
 
   services.xserver.wacom.enable = true;
-
 }

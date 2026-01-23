@@ -1,11 +1,4 @@
 {
-  pkgs,
-  lib,
-  config,
-  ...
-}:
-{
-
   programs.oh-my-posh = {
     enable = true;
     enableZshIntegration = true;

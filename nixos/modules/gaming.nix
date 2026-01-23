@@ -8,7 +8,6 @@
       dedicatedServer.openFirewall = true;
     };
     gamemode.enable = true;
-
   };
 
   environment.sessionVariables = {

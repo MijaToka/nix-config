@@ -1,6 +1,8 @@
-{ config, ... }:let
+{ config, ... }:
+let
   base16Scheme = config.stylix.base16Scheme;
-in {
+in
+{
   programs.quickshell = {
     enable = true;
     config = {
