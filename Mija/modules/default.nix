@@ -13,6 +13,8 @@
     ./stylix.nix
     # ./vscode.nix
     ./udiskie.nix
-    ./xdg.nix
+    ./xdg-desktopEntries.nix
+    ./xdg-mimeApps.nix
+    ./xdg-portal.nix
   ];
 }
