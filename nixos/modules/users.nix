@@ -14,7 +14,22 @@
       ];
       packages = with pkgs; [
         vscode
-        discord
+
+        (discord.overrideAttrs (oldAttrs: rec {
+          desktopItem = oldAttrs.desktopItem.override {
+            exec = "env DISCORD_USE_PIPEWIRE=true XDG_SESSION_TYPE=wayland discord";
+          };
+          postInstall =
+            builtins.replaceStrings
+              [
+                "${oldAttrs.desktopItem}"
+              ]
+              [
+                "${desktopItem}"
+              ]
+              oldAttrs.postInstall;
+        }))
+
         obsidian
         zoom-us
         spotify
