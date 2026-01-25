@@ -65,8 +65,10 @@
       krita
       qimgv
 
-      ## Audio editor
-      audacity # Audio-mixing
+      ## MuseApps
+      audacity # Audio-mixing (will move to unstable whenever audacity4 drops)
+      musescore
+
       wofi # App launcher
       # rofi
 
