@@ -61,6 +61,11 @@
         # Scroll through existing workspaces with mainMod + scroll
         "$mainMod, mouse_down, workspace, e-1"
         "$mainMod, mouse_up, workspace, e+1"
+
+        #Screenshot (continued in bindo)
+        ", Print, exec, hyprshot -m region"
+        "SHIFT, Print, exec, hyprshot -m window"
+        "$mainMod, Print, exec, hyprshot -m output"
       ];
 
       bindm = [
