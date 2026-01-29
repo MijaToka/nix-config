@@ -39,12 +39,9 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       home-manager,
       stylix,
-      nvf,
-      zen-browser,
       ...
     }@inputs:
     let
@@ -57,12 +54,9 @@
           inherit system;
           modules = [
             ./nixos/configuration.nix
-            (
-              { pkgs, ... }:
-              {
-                environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
-              }
-            )
+            {
+              environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
+            }
           ];
         };
       };
