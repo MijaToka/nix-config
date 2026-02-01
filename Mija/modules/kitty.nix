@@ -1,6 +1,5 @@
 { lib, ... }:
 {
-
   programs.kitty = {
     enable = true;
     settings = {
@@ -10,7 +9,6 @@
       window_padding_width = 10;
       background_opacity = lib.mkForce "0.5";
       background_blurr = 3;
-
     };
   };
 }
