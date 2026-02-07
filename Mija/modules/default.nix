@@ -9,6 +9,7 @@
     ./fzf.nix
     ./git.nix
     ./kitty.nix
+    ./mpv.nix
     # ./quickshell.nix
     ./stylix.nix
     # ./vscode.nix
