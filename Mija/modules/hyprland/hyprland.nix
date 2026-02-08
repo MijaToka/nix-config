@@ -6,7 +6,7 @@
 
     settings = {
       "$terminal" = "kitty";
-      "$fileManager" = "dolphin";
+      "$fileManager" = "kitty yazi";
       "$menu" = "wofi --show drun";
       "$browser" = "zen";
 
