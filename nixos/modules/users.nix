@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 {
   users = {
     defaultUserShell = pkgs.zsh;
@@ -19,14 +19,16 @@
         with pkgs;
         [
           vscode
-          (utils.replaceDesktopExec discord "env DISCORD_USE_PIPEWIRE=true XDG_SESSION_TYPE=wayland discord")
 
           obsidian
           zoom-us
           spotify
           wasistlos
           audacity
-        ];
+        ]
+        ++ (with inputs.nixpkgs-unstable; [
+          (utils.replaceDesktopExec discord "env DISCORD_USE_PIPEWIRE=true XDG_SESSION_TYPE=wayland discord")
+        ]);
     };
   };
 }
