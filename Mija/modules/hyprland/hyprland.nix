@@ -181,6 +181,7 @@
       exec-once = [
         "quickshell -p ~/.dotfiles/quickshell/shell.qml"
         "hyprpaper"
+        "gnome-keyring-daemon --start --components=secrets"
       ];
     };
   };

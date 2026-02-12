@@ -13,6 +13,7 @@
     ./gaming.nix
     ./garbage_collection.nix
     # ./kde.nix
+    ./keyring.nix
     ./networking.nix
     ./openGL.nix
     # ./osu.nix
