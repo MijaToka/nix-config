@@ -1,6 +1,6 @@
 {
   imports = [
-    ./aagl.nix
+    # ./aagl.nix
     ./battery.nix
     ./bluetooth.nix
     ./bootloader.nix
