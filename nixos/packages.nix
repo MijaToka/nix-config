@@ -119,7 +119,7 @@
     ++ (with inputs.nixpkgs-unstable; [
       osu-lazer-bin
     ])
-    ++ (with inputs.nixpkgs-old-gtk; [
+    ++ (with inputs.nixpkgs-old; [
       rnote
     ])
     ++ (with inputs; [

@@ -6,10 +6,7 @@
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
 
-    nixpkgs-old-gtk = {
-      url = "github.com/NixOS/nixpkgs/6d674616a4c9fb815c2599c6615e3c34b6027cee";
-      flake = false;
-    };
+    nixpkgs-old.url = "github:nixos/nixpkgs/nixos-25.05";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
