@@ -58,10 +58,11 @@
       nixosConfigurations = {
         nixos = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs; };
-          inherit system;
+          # inherit system;
           modules = [
             ./nixos/configuration.nix
             {
+              nixpkgs.hostPlatform.system = "${system}";
               environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
             }
           ];
