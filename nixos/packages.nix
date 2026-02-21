@@ -1,5 +1,11 @@
 { pkgs, inputs, ... }:
 {
+  nix.settings = {
+    # Cachix services to not have to compile
+    trusted-substituters = [ "https://unmojang.cachix.org" ];
+    trusted-public-keys = [ "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY=" ];
+  };
+
   nixpkgs.config = {
     allowUnfree = true;
   };
@@ -123,6 +129,7 @@
       rnote
     ])
     ++ (with inputs; [
-      zen-browser.packages."${system}".default
+      zen-browser.packages.${pkgs.system}.default
+      fjord-launcher.packages.${pkgs.system}.default
     ]);
 }
