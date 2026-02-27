@@ -11,6 +11,10 @@
       "$browser" = "zen";
 
       monitor = ",preferred,auto,auto";
+      source = [
+        "~/.config/hypr/monitors.conf"
+        "~/.config/hypr/workspaces.conf"
+      ];
 
       env = [
         "XDG_CURRENT_DESKTOP,Hyprland"
