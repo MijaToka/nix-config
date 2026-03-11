@@ -21,7 +21,7 @@ Scope {
                 right: 5
             }
 
-            BarBg {}
+            BarBg {} // How the bar looks
             BarContents { id: barContent }     
 
             implicitHeight: 35
