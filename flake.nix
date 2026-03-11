@@ -13,6 +13,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     stylix = {
       url = "github:danth/stylix/release-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -65,6 +70,7 @@
               nixpkgs.hostPlatform.system = "${system}";
               environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
             }
+            inputs.nix-index-database.nixosModules.default
           ];
         };
       };

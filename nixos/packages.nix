@@ -30,6 +30,7 @@
         ];
       };
     };
+    nix-index-database.comma.enable = true;
   };
 
   environment.systemPackages =
