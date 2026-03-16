@@ -118,6 +118,7 @@
       # Other
       home-manager
       nwg-displays # Display manager for hyprland
+      gearlever # Instaling GUI for AppImages
       direnv # Environment management (for vscode)
       vdhcoapp # CoApp to download videos from firefox
 
