@@ -70,6 +70,7 @@
       # Editors
       ## Text editor
       neovim
+      logseq # Open source obsidian
       zathura # Minimal file viewer
       sioyek # Zathura alternative
 
