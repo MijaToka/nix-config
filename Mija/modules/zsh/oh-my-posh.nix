@@ -15,7 +15,7 @@
             {
               foreground = "white";
               style = "plain";
-              template = "<green>┏[</>{{ if .SSHSession }}\udb83\udd3d{{ end }}{{ .UserName }}@{{ .HostName }}<green>]</>";
+              template = "<green>┏[</>{{ if .SSHSession }}{{ end }}{{ .UserName }}@{{ .HostName }}<green>]</>";
               type = "session";
             }
 
