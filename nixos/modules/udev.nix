@@ -27,5 +27,8 @@
       KERNEL=="hidraw*", ATTRS{idVendor}=="0f0d", ATTRS{idProduct}=="0196", MODE="0660", TAG+="uaccess"
     '';
   };
-  hardware.uinput.enable = true;
+  hardware = {
+    uinput.enable = true;
+    keyboard.zsa.enable = true;
+  };
 }

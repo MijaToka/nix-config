@@ -73,6 +73,7 @@
       xorg.xev # Device Input testing
       nh # Nix commands
       usbutils # USB commands
+      keymapp # ZSA keyboard flasher
 
       # Editors
       ## Text editor

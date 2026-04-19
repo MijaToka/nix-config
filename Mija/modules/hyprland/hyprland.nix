@@ -46,22 +46,31 @@
         sensitivity = -0.45; # [-1.0,1.0], 0 means no modification.
       };
 
-      device = [
-        {
-          name = "asue140d:00-04f3:31b9-touchpad";
-          sensitivity = 0.25;
-        }
-        {
-          name = "keychron-k2-he-keyboard";
-          kb_layout = "us";
-          kb_variant = "altgr-intl";
-        }
-        {
-          name = "keychron-keychron-k2-he-keyboard";
-          kb_layout = "us";
-          kb_variant = "altgr-intl";
-        }
-      ];
+      device =
+        let
+          englishKeyboards =
+            map
+              (kb: {
+                name = kb;
+                kb_layout = "us";
+                kb_variant = "altgr-intl";
+              })
+              [
+                "keychron-k2-he-keyboard"
+                "keychron-keychron-k2-he-keyboard"
+                "zsa-technology-labs-voyager"
+                "zsa-technology-labs-voyager-system-control"
+                "zsa-technology-labs-voyager-consumer-control"
+                "zsa-technology-labs-voyager-keyboard"
+              ];
+        in
+        [
+          {
+            name = "asue140d:00-04f3:31b9-touchpad";
+            sensitivity = 0.25;
+          }
+        ]
+        ++ englishKeyboards;
 
       general = {
         gaps_in = 2;
