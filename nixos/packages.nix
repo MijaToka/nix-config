@@ -10,35 +10,45 @@
     allowUnfree = true;
   };
 
-  programs = {
-    firefox.enable = true; # Browser
-    hyprland.enable = true; # Window manager
-    direnv.enable = true; # Local environment variables acrivation when entering a directory
-    localsend.enable = true; # Airdrop-like file transfer
-    zsh.enable = true; # Z shell
-    yazi = {
-      # Terminal file explorer
-      enable = true;
-      settings.yazi = { };
-    };
-    appimage = {
-      # Utility to run .AppImage files in NixOS
-      enable = true;
-      binfmt = true;
-      package = pkgs.appimage-run.override {
-        extraPkgs = pkgs: [
-          pkgs.ffmpeg
-          pkgs.imagemagick
-        ];
+  programs =
+    let
+      programList = [
+        "firefox" # Browser
+        "hyprland" # Window manager
+        "direnv" # Local environment variables acrivation when entering a directory
+        "localsend" # Airdrop-like file transfer
+        "zsh" # Z shell
+        "yazi" # Terminal file explorer
+      ];
+      enabledPrograms = builtins.listToAttrs (
+        builtins.map (name: {
+          inherit name;
+          value = {
+            enable = true;
+          };
+        }) programList
+      );
+    in
+    enabledPrograms
+    // {
+      appimage = {
+        # Utility to run .AppImage files in NixOS
+        enable = true;
+        binfmt = true;
+        package = pkgs.appimage-run.override {
+          extraPkgs = pkgs: [
+            pkgs.ffmpeg
+            pkgs.imagemagick
+          ];
+        };
+      };
+      nix-index-database.comma.enable = true; # Run applications in nixpkgs cache without installing
+      tmux = {
+        # Terminal multiplexer
+        enable = true;
+        baseIndex = 1;
       };
     };
-    nix-index-database.comma.enable = true; # Run applications in nixpkgs cache without installing
-    tmux = {
-      # Terminal multiplexer
-      enable = true;
-      baseIndex = 1;
-    };
-  };
 
   environment.systemPackages =
     with pkgs;
