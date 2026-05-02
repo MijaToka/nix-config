@@ -104,8 +104,7 @@
 
       # Messaging apps
       slack
-      mattermost # This is the server (?)
-      mattermost-desktop
+      # mattermost # This is the server (?)
 
       # DE and WM stuff
       hyprland # WM
@@ -136,6 +135,8 @@
     ]
     ++ (with inputs.nixpkgs-unstable; [
       osu-lazer-bin
+      ani-cli
+      mattermost-desktop # Moved  to user
     ])
     ++ (with inputs.nixpkgs-old; [
       rnote
