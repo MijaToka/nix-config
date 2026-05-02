@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  lib,
+  ...
+}:
 {
   boot = {
     # Boot loader
@@ -34,5 +38,10 @@
       "udev.log_priority=3"
       "rd.systemd.show_status=auto"
     ];
+
+    #Kernel fix to patch copyfail (can remove when the kernel version is fixed)
+    kernelPackages = lib.mkIf (lib.versionOlder pkgs.linux.version "6.18.22") (
+      lib.mkDefault pkgs.linuxPackages_6_18
+    );
   };
 }
