@@ -1,7 +1,5 @@
 import QtQuick
-import Quickshell
 import Quickshell.Io
-import "../Widgets"
 
 Row {
     spacing: 2
@@ -23,14 +21,13 @@ Row {
         MouseArea {
             anchors.fill: parent
             onClicked: {
-                openDRun.running = true
+                openDRun.running = true;
             }
         }
 
         Process {
             id: openDRun
-            command: ["wofi","--show", "drun"]
+            command: ["wofi", "--show", "drun"]
         }
-
     }
 }

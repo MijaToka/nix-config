@@ -2,6 +2,7 @@
 
 import Quickshell
 import "./Bar"
-Scope {
+
+ShellRoot {
     Bar {}
 }

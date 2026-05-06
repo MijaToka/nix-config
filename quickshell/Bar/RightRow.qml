@@ -1,9 +1,8 @@
 import QtQuick
-import Quickshell
 import "../Widgets"
 import "../Buttons"
 
-Row { 
+Row {
     spacing: 5
     anchors {
         right: parent.right
@@ -13,43 +12,49 @@ Row {
 
     height: parent.height - 12
 
-
-    Power {id:battery}
+    Power {
+        id: battery
+    }
 
     CPUButton {}
 
     RAMButton {}
 
-    VolumeButton { }
+    VolumeButton {}
 
-    WifiButton { }
+    WifiButton {}
 
-    BluetoothButton { }
-    
-    PowerProfileButton { }
+    BluetoothButton {}
 
-    Button { // Battery
+    PowerProfileButton {}
+
+    Button {
+        // Battery
         text: battery.text
         isSymbol: false
     }
-    
-    Button { // Date
+
+    Button {
+        // Date
         text: Time.date
         isSymbol: false
     }
 
-    Button { // Time
+    Button {
+        // Time
         text: Time.time
         isSymbol: false
-        }
+    }
 
-    Button { //Power button
-        text: "\u23fb" 
+    Button {
+        //Power button
+        text: "\u23fb"
         fillColor: "#161616"
         hasBorder: true
     }
 
-    Text { // Spacing
+    Text {
+        // Spacing
         text: " "
     }
 }

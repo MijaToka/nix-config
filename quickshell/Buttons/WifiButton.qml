@@ -1,23 +1,22 @@
 import "./Buttons"
 
 import QtQuick
-import Quickshell
 import Quickshell.Io
 
 Button {
     id: root
-    text:  "\uf1eb"
+    text: "\uf1eb"
 
-    MouseArea { 
+    MouseArea {
         anchors.fill: parent
         onClicked: {
-            openBlueman.running = true
+            openBlueman.running = true;
         }
     }
 
     Process {
         id: openBlueman
-        command: ["kitty","-T","FloatingKitty","nmtui"]
+        command: ["kitty", "-T", "FloatingKitty", "nmtui"]
         running: false
     }
 }

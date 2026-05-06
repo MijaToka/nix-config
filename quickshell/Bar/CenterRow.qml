@@ -1,5 +1,4 @@
 import QtQuick
-import Quickshell
 import Quickshell.Hyprland
 
 Row {
@@ -8,7 +7,7 @@ Row {
         centerIn: parent
         verticalCenter: parent.verticalCenter
     }
-    height: parent.height-12
+    height: parent.height - 12
     HyprWorkspaces {}
 
     // If no workspaces
@@ -18,5 +17,4 @@ Row {
         color: "#ffffff"
         font.pixelSize: 12
     }
-
 }

@@ -1,8 +1,9 @@
 import Quickshell
 import QtQuick
+
 Scope {
     Variants {
-        model: Quickshell.screens;
+        model: Quickshell.screens
         PanelWindow {
             id: panel
             required property var modelData
@@ -22,10 +23,11 @@ Scope {
             }
 
             BarBg {} // How the bar looks
-            BarContents { id: barContent }     
+            BarContents {
+                id: barContent
+            }
 
             implicitHeight: 35
         }
-
     }
 }

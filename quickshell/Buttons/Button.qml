@@ -1,20 +1,19 @@
 import QtQuick
-import Quickshell
 
 Rectangle {
     id: root
 
     property string text
-    
+
     property string fillColor: "#111111"
     property string textColor: "#ffffff"
     property string borderColor: "#111111"
-    
+
     property bool hasBorder: false
     property bool isSymbol: true
-    
+
     property string symbolFont: "Symbols Nerd Font Mono"
-    
+
     property bool doubleWidth: false
 
     FontLoader {
@@ -38,10 +37,10 @@ Rectangle {
         color: textColor
         font {
             pixelSize: 13
-            family: isSymbol? symbolFont : jetBrainsMono.name
+            family: isSymbol ? symbolFont : jetBrainsMono.name
         }
         anchors {
             centerIn: parent
         }
-    } 
+    }
 }

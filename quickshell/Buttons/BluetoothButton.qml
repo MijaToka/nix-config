@@ -6,12 +6,12 @@ import Quickshell.Io
 
 Button {
     id: root
-    text:  "\udb80\udcaf"
+    text: "\udb80\udcaf"
 
-    MouseArea { 
+    MouseArea {
         anchors.fill: parent
         onClicked: {
-            openBlueman.running = true
+            openBlueman.running = true;
         }
     }
 
