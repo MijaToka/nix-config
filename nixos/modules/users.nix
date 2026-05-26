@@ -23,7 +23,7 @@
           obsidian
           zoom-us
           spotify
-          wasistlos
+          zapzap
           audacity
         ]
         ++ (with inputs.nixpkgs-unstable; [

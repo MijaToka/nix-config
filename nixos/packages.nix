@@ -19,6 +19,7 @@
         "localsend" # Airdrop-like file transfer
         "zsh" # Z shell
         "yazi" # Terminal file explorer
+        "thunderbird" # E-Mail client
       ];
       enabledPrograms = builtins.listToAttrs (
         builtins.map (name: {
@@ -75,12 +76,12 @@
 
       ## Stat display
       fastfetch
-      neofetch
+      #neofetch
       cava # TUI audio visualizer
       htop
 
       ## Utilities
-      xorg.xev # Device Input testing
+      xev # Device Input testing
       nh # Nix commands
       usbutils # USB commands
       keymapp # ZSA keyboard flasher
@@ -120,6 +121,7 @@
       hyprland # WM
       hyprpaper # WM wall paper (not being used?)
       brightnessctl
+      playerctl
       mako # Notification daemon
       quickshell # Shell creating app (in my case top bar)
       kdePackages.dolphin # File manager
@@ -137,7 +139,7 @@
       home-manager
       nwg-displays # To change screen properties in hyprland with a GUI
       gearlever # GUI for instaling AppImages
-      vdhcoapp # CoApp to download videos from firefox
+      # vdhcoapp # CoApp to download videos from firefox
       easyeffects # Microphone effects
 
       # Device drivers
@@ -147,8 +149,6 @@
       osu-lazer-bin
       ani-cli
       mattermost-desktop # Moved  to user
-    ])
-    ++ (with inputs.nixpkgs-old; [
       rnote
     ])
     ++ (with inputs; [

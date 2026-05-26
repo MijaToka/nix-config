@@ -16,10 +16,10 @@
 
   environment.systemPackages = with pkgs; [
     # Gaming
-    lutris
+    # lutris
     winetricks
-    wineWowPackages.stable
-    wineWowPackages.waylandFull
+    wineWow64Packages.stable
+    wineWow64Packages.waylandFull
     mangohud
     protonup-ng
 
