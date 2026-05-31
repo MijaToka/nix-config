@@ -1,16 +1,21 @@
-import "./Buttons"
-
+import "../Buttons"
+import "../Widgets"
 import QtQuick
 import Quickshell.Io
 
 Button {
     id: root
-    text: "\uf1eb"
+    text: WifiStatus.buttonText
 
     MouseArea {
         anchors.fill: parent
-        onClicked: {
-            openBlueman.running = true;
+        acceptedButtons: Qt.LeftButton | Qt.RightButton
+        onClicked: mouse => {
+            if (mouse.button == Qt.LeftButton) {
+                openBlueman.running = true;
+            } else if (mouse.button == Qt.RightButton) {
+                WifiStatus.textState = (WifiStatus.textState + 1) % 3;
+            }
         }
     }
 
