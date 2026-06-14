@@ -1,4 +1,7 @@
-{ pkgs, inputs, ... }:
+{
+  pkgs,
+  ...
+}:
 {
   users = {
     defaultUserShell = pkgs.zsh;
@@ -25,11 +28,9 @@
           spotify
           zapzap
           audacity
-        ]
-        ++ (with inputs.nixpkgs-unstable; [
-          (utils.replaceDesktopExec discord "env DISCORD_USE_PIPEWIRE=true XDG_SESSION_TYPE=wayland discord")
-          element-desktop
-        ]);
+          (utils.replaceDesktopExec unstable.discord "env DISCORD_USE_PIPEWIRE=true XDG_SESSION_TYPE=wayland discord")
+          unstable.element-desktop
+        ];
     };
   };
 }

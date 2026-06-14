@@ -15,7 +15,17 @@ in
       modules = [
         ./nixos/configuration.nix
         {
-          nixpkgs.hostPlatform.system = "${system}";
+          nixpkgs = {
+            hostPlatform.system = "${system}";
+            overlays = [
+              (final: prev: {
+                unstable = import inputs.nixpkgs-unstable {
+                  inherit (final) config;
+                  inherit (final.stdenv.hostPlatform) system;
+                };
+              })
+            ];
+          };
           environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
         }
         inputs.nix-index-database.nixosModules.default

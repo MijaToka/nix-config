@@ -65,7 +65,6 @@
       fzf # Fuzzy finder
       tree # Lists directories in tree structure
       zoxide # Better cd command
-      # tmux ## Moved to programs # Terminal multiplexer
 
       ## File management
       file # Determine file type
@@ -86,7 +85,7 @@
       usbutils # USB commands
       keymapp # ZSA keyboard flasher
 
-      # Editors
+      # Editors and file viewers
       ## Text editor
       neovim
       logseq # Open-source obsidian
@@ -144,13 +143,13 @@
 
       # Device drivers
       sc-controller
+
+      unstable.osu-lazer-bin
+      unstable.ani-cli
+      unstable.mattermost-desktop # Moved  to user
+      unstable.rnote
+      unstable.zotero # Citations manager
     ]
-    ++ (with inputs.nixpkgs-unstable; [
-      osu-lazer-bin
-      ani-cli
-      mattermost-desktop # Moved  to user
-      rnote
-    ])
     ++ (with inputs; [
       zen-browser.packages.${pkgs.system}.default
       # fjord-launcher.packages.${pkgs.system}.default
