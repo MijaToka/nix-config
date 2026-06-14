@@ -7,6 +7,7 @@
         email = "mijail.tokarev@ug.uchile.cl";
       };
       core.Editor = "nvim";
+      init.defaultBranch = "main";
     };
   };
 }
