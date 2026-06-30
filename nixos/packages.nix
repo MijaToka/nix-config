@@ -60,6 +60,7 @@
       git
       lazygit
       wget # Download files from CLI
+      sshfs # SSH FUSE file system
 
       ## Navigation & productivity
       fzf # Fuzzy finder
