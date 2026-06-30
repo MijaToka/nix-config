@@ -47,6 +47,12 @@
       url = "github:unmojang/FjordLauncher";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    odysseus = {
+      url = "github:pewdiepie-archdaemon/odysseus/pull/2568/head";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
   };
 
   outputs = inputs: import ./outputs.nix inputs;

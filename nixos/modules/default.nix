@@ -16,6 +16,7 @@
     # ./kde.nix
     ./keyring.nix
     ./networking.nix
+    #./odysseus.nix
     ./openGL.nix
     # ./osu.nix
     ./sound.nix
