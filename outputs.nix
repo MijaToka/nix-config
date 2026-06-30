@@ -26,7 +26,10 @@ in
               })
             ];
           };
-          environment.systemPackages = [ inputs.my-nvf-config.packages.${system}.default ];
+          environment.systemPackages = with inputs; [
+            my-nvf-config.packages.${system}.default
+            nix-search-cli.packages.${system}.default
+          ];
         }
         inputs.nix-index-database.nixosModules.default
       ];
