@@ -22,7 +22,7 @@
         "thunderbird" # E-Mail client
       ];
       enabledPrograms = builtins.listToAttrs (
-        builtins.map (name: {
+        map (name: {
           inherit name;
           value = {
             enable = true;
@@ -89,7 +89,7 @@
       # Editors and file viewers
       ## Text editor
       neovim
-      logseq # Open-source obsidian
+      # logseq # Open-source obsidian
       zathura # Minimal file viewer
       sioyek # Zathura alternative
 

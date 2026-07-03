@@ -4,12 +4,10 @@
   inputs = {
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
-
-    nixpkgs-old.url = "github:nixos/nixpkgs/nixos-25.05";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
 
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -25,7 +23,7 @@
 
     nvf = {
       url = "github:NotAShelf/nvf";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "my-nvf-config";
     };
 
     zen-browser = {
@@ -35,7 +33,7 @@
 
     my-nvf-config = {
       url = "github:MijaToka/nvf-config";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     aagl = {
