@@ -16,7 +16,7 @@
         "$mainMod SHIFT, F, fullscreen"
         "$mainMod, SPACE, exec, $menu"
         "$mainMod, P, pseudo, # dwindle"
-        "$mainMod, O, togglesplit, # dwindle"
+        "$mainMod, O, layoutmsg, togglesplit, # dwindle"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left, movefocus, l"

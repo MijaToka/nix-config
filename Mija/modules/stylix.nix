@@ -6,16 +6,29 @@
     # base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
     polarity = "dark";
 
-    targets = {
-      wofi.enable = false;
-      neovim.enable = false;
-      hyprland.enable = false;
-      hyprlock.enable = false;
-      waybar.enable = false;
-      vscode.enable = false;
-      mako.enable = false;
-      wpaperd.enable = false;
-    };
+    targets =
+      let
+        disabledList = [
+          "wofi"
+          "neovim"
+          "hyprland"
+          "hyprlock"
+          "hyprpaper"
+          "waybar"
+          "vscode"
+          "mako"
+          "wpaperd"
+        ];
+        disabledTargets = builtins.listToAttrs (
+          map (name: {
+            inherit name;
+            value = {
+              enable = false;
+            };
+          }) disabledList
+        );
+      in
+      disabledTargets;
 
     fonts = {
       emoji = {
