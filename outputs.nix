@@ -16,7 +16,7 @@ in
         ./nixos/configuration.nix
         {
           nixpkgs = {
-            hostPlatform.system = "${system}";
+            hostPlatform = { inherit system; };
             overlays = [
               (final: prev: {
                 unstable = import inputs.nixpkgs-unstable {

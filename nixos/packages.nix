@@ -152,7 +152,7 @@
       unstable.zotero # Citations manager
     ]
     ++ (with inputs; [
-      zen-browser.packages.${pkgs.system}.default
+      zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
       # fjord-launcher.packages.${pkgs.system}.default
     ]);
 }
