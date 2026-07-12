@@ -149,7 +149,7 @@
       };
 
       dwindle = {
-        pseudotile = true;
+        # pseudotile = true;
         preserve_split = true;
       };
 
@@ -172,28 +172,28 @@
         disable_hyprland_logo = true;
       };
 
-      windowrulev2 = [
+      windowrule = [
         # "supressevent maximize, class:.*"
-        "nofocus,class:^$,title:^$,xwayland:1,floating:1,fullscreen:0,pinned:0"
+        "no_focus on,match:title ^$,match:xwayland 1,match:float 1,match:fullscreen 0,match:pin 0"
 
-        "float,class:kitty,title:FloatingKitty"
-        "size 50% 50%,class:kitty,title:FloatingKitty"
-        "move 50% 48,class:kitty,title:FloatingKitty"
+        "float on,match:class kitty,match:title FloatingKitty"
+        "size 50% 50%,match:class kitty,match:title FloatingKitty"
+        "move 50% 48,match:class kitty,match:title FloatingKitty"
 
-        "float,class:^.blueman-manager-wrapped$"
-        "size 25% 50%,class:^.blueman-manager-wrapped$"
-        "move 68% 48,class:^.blueman-manager-wrapped$"
+        "float on,match:class ^.blueman-manager-wrapped$"
+        "size 25% 50%,match:class ^.blueman-manager-wrapped$"
+        "move 68% 48,match:class ^.blueman-manager-wrapped$"
 
-        "float,class:discord,initialTitle:(Discord Popout)"
-        "size 75% 75%,class:discord,initialTitle:(Discord Popout)"
+        "float on,match:class discord,match:initial_title (Discord Popout)"
+        "size 75% 75%,match:class discord,match:initial_title (Discord Popout)"
 
         # "force_xwayland, class:^(steam)$"
-        # "force_xwayland, title:^(Steam.*)$"
+        # "force_xwayland, match:title ^(Steam.*)$"
       ];
 
       exec-once = [
         "quickshell -p ~/.dotfiles/quickshell/shell.qml"
-        "hyprpaper"
+        # "hyprpaper"
         "gnome-keyring-daemon --start --components=secrets"
         "easyeffects -w"
       ];
