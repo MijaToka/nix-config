@@ -4,6 +4,10 @@
   # Enable automatic login for the user.
   services.displayManager = {
 
+    ly = {
+      enable = false;
+    };
+
     sddm = {
       enable = true;
       wayland.enable = true;
