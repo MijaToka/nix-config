@@ -69,6 +69,10 @@
             name = "asue140d:00-04f3:31b9-touchpad";
             sensitivity = 0.25;
           }
+          {
+            name = "wacom-intuos-bt-m-pen";
+            output = "current";
+          }
         ]
         ++ englishKeyboards;
 
