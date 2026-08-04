@@ -1,5 +1,5 @@
 {
-  flake.nixosModules.usbAutomount = {
+  flake.nixosModules.usbAutoMount = {
     services = {
       udisks2.enable = true;
       dbus = {

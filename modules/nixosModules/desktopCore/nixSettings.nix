@@ -16,7 +16,7 @@
       hostPlatform.system = lib.mkDefault "x86_64-linux";
       config.allowUnfree = true;
       overlays = [
-        self.overlays.unsable-channel
+        self.overlays.unstable-channel
       ];
     };
   };

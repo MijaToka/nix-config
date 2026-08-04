@@ -11,15 +11,16 @@
       displayManagerConfig
       installedPackages
       usbAutoMount
-      envirnonmentConfig
-      fprintAuthentication
+      environmentConfig
       garbageCollection
-      keyrrings
+      keyrings
       networkConfig
+      nixSettings
       soundConfig
+      sshModule
       udevRules
       wacom
-      xserver
+      xserverConfig
     ];
   };
 }

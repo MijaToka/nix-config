@@ -1,5 +1,5 @@
 {
-  flake.nixModules.gpuDrivers =
+  flake.nixosModules.gpuDrivers =
     { pkgs, ... }:
     {
       hardware.graphics = {

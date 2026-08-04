@@ -4,6 +4,7 @@
 }:
 {
   flake.nixosModules.installedPackages = { pkgs, ... }: {
+    imports = [ inputs.nix-index-database.nixosModules.default ];
     config = {
       nix.settings = {
         # Cachix services to not have to compile
@@ -169,6 +170,8 @@
         ]
         ++ (with inputs; [
           zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+          my-nvf-config.packages.${pkgs.stdenv.hostPlatform.system}.default
+          nix-search-cli.packages.${pkgs.stdenv.hostPlatform.system}.default
           # fjord-launcher.packages.${pkgs.system}.default
         ]);
     };
