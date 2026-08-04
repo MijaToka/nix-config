@@ -1,28 +1,32 @@
 {
   self,
+  withSystem,
   inputs,
   ...
 }:
 {
-  flake.nixosConfigurations.nixos = inputs.nixpkgs.lib.nixosSystem {
-    modules = with self.nixosModules; [
-      {
-        nixpkgs.hostPlatform.system = "x86_64-linux";
-        networking.hostName = "nixos";
-        system.stateVersion = "25.05";
-      }
-      ./_hardware-configuration.nix
+  flake.nixosConfigurations.nixos = withSystem "x86_64-linux" (
+    { system, ... }:
+    inputs.nixpkgs.lib.nixosSystem {
+      modules = with self.nixosModules; [
+        {
+          nixpkgs.hostPlatform = { inherit system; };
+          networking.hostName = "nixos";
+          system.stateVersion = "25.05";
+        }
+        ./_hardware-configuration.nix
 
-      desktopModuleBundle
-      { }
+        desktopModuleBundle
+        { }
 
-      gamingModuleBundle
-      { gaming.osu.enable = true; }
+        gamingModuleBundle
+        { gaming.osu.enable = true; }
 
-      users
-      powerKey
-      customServices
-      gpuDrivers
-    ];
-  };
+        users
+        powerKey
+        customServices
+        gpuDrivers
+      ];
+    }
+  );
 }

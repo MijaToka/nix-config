@@ -1,179 +1,175 @@
 {
-  inputs,
+  self,
+  moduleWithSystem,
   ...
 }:
 {
-  flake.nixosModules.installedPackages = { pkgs, ... }: {
-    imports = [ inputs.nix-index-database.nixosModules.default ];
-    config = {
-      nix.settings = {
-        # Cachix services to not have to compile
-        trusted-substituters = [ "https://unmojang.cachix.org" ];
-        trusted-public-keys = [ "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY=" ];
-      };
-
-      nixpkgs.config = {
-        allowUnfree = true;
-      };
-
-      programs =
-        let
-          programList = [
-            "firefox" # Browser
-            "hyprland" # Window manager
-            "direnv" # Local environment variables acrivation when entering a directory
-            "localsend" # Airdrop-like file transfer
-            "zsh" # Z shell
-            "yazi" # Terminal file explorer
-            "thunderbird" # E-Mail client
-          ];
-          enabledPrograms = builtins.listToAttrs (
-            map (name: {
-              inherit name;
-              value = {
-                enable = true;
-              };
-            }) programList
-          );
-        in
-        enabledPrograms
-        // {
-          appimage = {
-            # Utility to run .AppImage files in NixOS
-            enable = true;
-            binfmt = true;
-            package = pkgs.appimage-run.override {
-              extraPkgs = pkgs: [
-                pkgs.ffmpeg
-                pkgs.imagemagick
-              ];
-            };
-          };
-          nix-index-database.comma.enable = true; # Run applications in nixpkgs cache without installing
-          tmux = {
-            # Terminal multiplexer
-            enable = true;
-            baseIndex = 1;
-          };
+  flake.nixosModules.installedPackages = moduleWithSystem (
+    { inputs', ... }: { pkgs, ... }: {
+      imports = [ self.nixosModules.nvim ];
+      config = {
+        nix.settings = {
+          # Cachix services to not have to compile
+          trusted-substituters = [ "https://unmojang.cachix.org" ];
+          trusted-public-keys = [ "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY=" ];
         };
 
-      environment.systemPackages =
-        with pkgs;
-        [
-          # CLI Utils
-          ## Version control
-          git
-          lazygit
-          wget # Download files from CLI
-          sshfs # SSH FUSE file system
+        programs =
+          let
+            programList = [
+              "firefox" # Browser
+              "hyprland" # Window manager
+              "direnv" # Local environment variables acrivation when entering a directory
+              "localsend" # Airdrop-like file transfer
+              "zsh" # Z shell
+              "yazi" # Terminal file explorer
+              "thunderbird" # E-Mail client
+            ];
+            enabledPrograms = builtins.listToAttrs (
+              map (name: {
+                inherit name;
+                value = {
+                  enable = true;
+                };
+              }) programList
+            );
+          in
+          enabledPrograms
+          // {
+            appimage = {
+              # Utility to run .AppImage files in NixOS
+              enable = true;
+              binfmt = true;
+              package = pkgs.appimage-run.override {
+                extraPkgs = pkgs: [
+                  pkgs.ffmpeg
+                  pkgs.imagemagick
+                ];
+              };
+            };
+            tmux = {
+              # Terminal multiplexer
+              enable = true;
+              baseIndex = 1;
+            };
+          };
 
-          ## Navigation & productivity
-          fzf # Fuzzy finder
-          tree # Lists directories in tree structure
-          zoxide # Better cd command
+        environment.systemPackages =
+          with pkgs;
+          [
+            # CLI Utils
+            ## Version control
+            git
+            lazygit
+            wget # Download files from CLI
+            sshfs # SSH FUSE file system
 
-          ## File management
-          file # Determine file type
-          unzip # Compress and de-compress files
-          zip
-          ffmpeg # Convert audio and video sources
-          openssl # Create private keys and certificates
+            ## Navigation & productivity
+            fzf # Fuzzy finder
+            tree # Lists directories in tree structure
+            zoxide # Better cd command
 
-          ## Stat display
-          fastfetch
-          cava # TUI audio visualizer
-          htop
+            ## File management
+            file # Determine file type
+            unzip # Compress and de-compress files
+            zip
+            ffmpeg # Convert audio and video sources
+            openssl # Create private keys and certificates
 
-          ## Utilities
-          xev # Device Input testing
-          nh # Nix commands
-          usbutils # USB commands
-          keymapp # ZSA keyboard flasher
+            ## Stat display
+            fastfetch
+            cava # TUI audio visualizer
+            htop
 
-          # Editors and file viewers
-          ## Text editor
-          neovim
-          # logseq # Open-source obsidian
-          zathura # Minimal file viewer
-          sioyek # Zathura alternative
+            ## Utilities
+            xev # Device Input testing
+            nh # Nix commands
+            usbutils # USB commands
+            keymapp # ZSA keyboard flasher
 
-          ## Notetaking
-          xournalpp
-          # rnote ## Moved to stable branch
+            # Editors and file viewers
+            ## Text editor
+            neovim
+            # logseq # Open-source obsidian
+            zathura # Minimal file viewer
+            sioyek # Zathura alternative
 
-          ## Image editor/viewer
-          gimp3 # Image editor
-          krita # Image editor/digital art platform
-          qimgv # Minimal image viewer
+            ## Notetaking
+            xournalpp
+            # rnote ## Moved to stable branch
 
-          ## MuseApps
-          audacity # Audio-mixing (will move to unstable whenever audacity4 drops)
-          musescore # Sheet music editing
+            ## Image editor/viewer
+            gimp3 # Image editor
+            krita # Image editor/digital art platform
+            qimgv # Minimal image viewer
 
-          wofi # App launcher
-          # rofi ## TODO: move my configuration to rofi
+            ## MuseApps
+            audacity # Audio-mixing (will move to unstable whenever audacity4 drops)
+            musescore # Sheet music editing
 
-          # Media player
-          mpv
-          vlc
+            wofi # App launcher
+            # rofi ## TODO: move my configuration to rofi
 
-          # Messaging apps
-          slack
-          # mattermost # This is the server (?)
+            # Media player
+            mpv
+            vlc
 
-          # DE and WM stuff
-          hyprland # WM
-          hyprpaper # WM wall paper (not being used?)
-          brightnessctl
-          playerctl
-          mako # Notification daemon
-          quickshell # Shell creating app (in my case top bar)
-          kdePackages.dolphin # File manager
+            # Messaging apps
+            slack
+            # mattermost # This is the server (?)
 
-          # Networkmanager GUI
-          networkmanagerapplet
+            # DE and WM stuff
+            hyprland # WM
+            hyprpaper # WM wall paper (not being used?)
+            brightnessctl
+            playerctl
+            mako # Notification daemon
+            quickshell # Shell creating app (in my case top bar)
+            kdePackages.dolphin # File manager
 
-          # Terminal emulators
-          kitty
+            # Networkmanager GUI
+            networkmanagerapplet
 
-          #Icons
-          adwaita-icon-theme
+            # Terminal emulators
+            kitty
 
-          # Other
-          home-manager
-          nwg-displays # To change screen properties in hyprland with a GUI
-          gearlever # GUI for instaling AppImages
-          # vdhcoapp # CoApp to download videos from firefox
-          easyeffects # Microphone effects
+            #Icons
+            adwaita-icon-theme
 
-          # Device drivers
-          sc-controller
+            # Other
+            home-manager
+            nwg-displays # To change screen properties in hyprland with a GUI
+            gearlever # GUI for instaling AppImages
+            # vdhcoapp # CoApp to download videos from firefox
+            easyeffects # Microphone effects
 
-          unstable.osu-lazer-bin
-          unstable.ani-cli
-          unstable.mattermost-desktop # Moved  to user
-          unstable.rnote
-          unstable.zotero # Citations manager
+            # Device drivers
+            sc-controller
 
-          # Communication
-          zapzap
-          unstable.discord
-          unstable.element-desktop
+            unstable.osu-lazer-bin
+            unstable.ani-cli
+            unstable.mattermost-desktop # Moved  to user
+            unstable.rnote
+            unstable.zotero # Citations manager
 
-          zoom-us
-          unstable.mattermost-desktop
+            # Communication
+            zapzap
+            unstable.discord
+            unstable.element-desktop
 
-          # Unfree software
-          vscode
-          obsidian
-          spotify
-        ]
-        ++ (with inputs; [
-          zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
-          my-nvf-config.packages.${pkgs.stdenv.hostPlatform.system}.default
-          nix-search-cli.packages.${pkgs.stdenv.hostPlatform.system}.default
-          # fjord-launcher.packages.${pkgs.system}.default
-        ]);
-    };
-  };
+            zoom-us
+            unstable.mattermost-desktop
+
+            # Unfree software
+            vscode
+            obsidian
+            spotify
+          ]
+          ++ (with inputs'; [
+            zen-browser.packages.default
+            # fjord-launcher.packages.${pkgs.system}.default
+          ]);
+      };
+    }
+  );
 }
