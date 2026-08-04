@@ -12,7 +12,7 @@ inputs.flake-parts.lib.mkFlake { inherit inputs; } (_: {
         specialArgs = { inherit inputs; };
         # inherit system;
         modules = [
-          ./nixos/configuration.nix
+          ./_nixos/configuration.nix
           {
             nixpkgs = {
               hostPlatform = { inherit system; };

@@ -17,17 +17,7 @@
             "input"
             "libvirtd"
           ];
-          packages = with pkgs; [
-            vscode
-
-            obsidian
-            zoom-us
-            spotify
-            zapzap
-            audacity
-            unstable.discord
-            unstable.element-desktop
-          ];
+          initialPassword = "password";
         };
       };
     };

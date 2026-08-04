@@ -1,0 +1,176 @@
+{
+  inputs,
+  ...
+}:
+{
+  flake.nixosModules.installedPackages = { pkgs, ... }: {
+    config = {
+      nix.settings = {
+        # Cachix services to not have to compile
+        trusted-substituters = [ "https://unmojang.cachix.org" ];
+        trusted-public-keys = [ "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY=" ];
+      };
+
+      nixpkgs.config = {
+        allowUnfree = true;
+      };
+
+      programs =
+        let
+          programList = [
+            "firefox" # Browser
+            "hyprland" # Window manager
+            "direnv" # Local environment variables acrivation when entering a directory
+            "localsend" # Airdrop-like file transfer
+            "zsh" # Z shell
+            "yazi" # Terminal file explorer
+            "thunderbird" # E-Mail client
+          ];
+          enabledPrograms = builtins.listToAttrs (
+            map (name: {
+              inherit name;
+              value = {
+                enable = true;
+              };
+            }) programList
+          );
+        in
+        enabledPrograms
+        // {
+          appimage = {
+            # Utility to run .AppImage files in NixOS
+            enable = true;
+            binfmt = true;
+            package = pkgs.appimage-run.override {
+              extraPkgs = pkgs: [
+                pkgs.ffmpeg
+                pkgs.imagemagick
+              ];
+            };
+          };
+          nix-index-database.comma.enable = true; # Run applications in nixpkgs cache without installing
+          tmux = {
+            # Terminal multiplexer
+            enable = true;
+            baseIndex = 1;
+          };
+        };
+
+      environment.systemPackages =
+        with pkgs;
+        [
+          # CLI Utils
+          ## Version control
+          git
+          lazygit
+          wget # Download files from CLI
+          sshfs # SSH FUSE file system
+
+          ## Navigation & productivity
+          fzf # Fuzzy finder
+          tree # Lists directories in tree structure
+          zoxide # Better cd command
+
+          ## File management
+          file # Determine file type
+          unzip # Compress and de-compress files
+          zip
+          ffmpeg # Convert audio and video sources
+          openssl # Create private keys and certificates
+
+          ## Stat display
+          fastfetch
+          cava # TUI audio visualizer
+          htop
+
+          ## Utilities
+          xev # Device Input testing
+          nh # Nix commands
+          usbutils # USB commands
+          keymapp # ZSA keyboard flasher
+
+          # Editors and file viewers
+          ## Text editor
+          neovim
+          # logseq # Open-source obsidian
+          zathura # Minimal file viewer
+          sioyek # Zathura alternative
+
+          ## Notetaking
+          xournalpp
+          # rnote ## Moved to stable branch
+
+          ## Image editor/viewer
+          gimp3 # Image editor
+          krita # Image editor/digital art platform
+          qimgv # Minimal image viewer
+
+          ## MuseApps
+          audacity # Audio-mixing (will move to unstable whenever audacity4 drops)
+          musescore # Sheet music editing
+
+          wofi # App launcher
+          # rofi ## TODO: move my configuration to rofi
+
+          # Media player
+          mpv
+          vlc
+
+          # Messaging apps
+          slack
+          # mattermost # This is the server (?)
+
+          # DE and WM stuff
+          hyprland # WM
+          hyprpaper # WM wall paper (not being used?)
+          brightnessctl
+          playerctl
+          mako # Notification daemon
+          quickshell # Shell creating app (in my case top bar)
+          kdePackages.dolphin # File manager
+
+          # Networkmanager GUI
+          networkmanagerapplet
+
+          # Terminal emulators
+          kitty
+
+          #Icons
+          adwaita-icon-theme
+
+          # Other
+          home-manager
+          nwg-displays # To change screen properties in hyprland with a GUI
+          gearlever # GUI for instaling AppImages
+          # vdhcoapp # CoApp to download videos from firefox
+          easyeffects # Microphone effects
+
+          # Device drivers
+          sc-controller
+
+          unstable.osu-lazer-bin
+          unstable.ani-cli
+          unstable.mattermost-desktop # Moved  to user
+          unstable.rnote
+          unstable.zotero # Citations manager
+
+          # Communication
+          zapzap
+          unstable.discord
+          unstable.element-desktop
+
+          zoom-us
+          unstable.mattermost-desktop
+
+          # Unfree software
+          vscode
+          obsidian
+          spotify
+        ]
+        ++ (with inputs; [
+          zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
+          # fjord-launcher.packages.${pkgs.system}.default
+        ]);
+    };
+  };
+}

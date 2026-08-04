@@ -55,7 +55,6 @@
     with pkgs;
     [
       # CLI Utils
-
       ## Version control
       git
       lazygit
@@ -76,7 +75,6 @@
 
       ## Stat display
       fastfetch
-      #neofetch
       cava # TUI audio visualizer
       htop
 
