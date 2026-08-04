@@ -9,17 +9,14 @@
       ...
     }:
     {
-      options = {
-        gaming = {
-          enable = lib.mkEnableOption "Enable core gaming module";
-          osu.enable = lib.mkEnableOption "Enable osu module";
-          genshin.enable = lib.mkEnableOption "Enable Genshin Launcher module";
-        };
-      };
       imports = with self.nixosModules; [
         gaming
-        osu
         genshin
       ];
+      config.gaming = {
+        enable = lib.mkDefault true;
+        osu.enable = lib.mkDefault false;
+        genshin.enable = lib.mkDefault false;
+      };
     };
 }
