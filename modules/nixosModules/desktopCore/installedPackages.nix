@@ -82,7 +82,7 @@
             htop
 
             ## Utilities
-            xev # Device Input testing
+            wev # Device Input testing
             nh # Nix commands
             usbutils # USB commands
             keymapp # ZSA keyboard flasher
