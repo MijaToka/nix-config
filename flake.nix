@@ -6,6 +6,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:denful/import-tree";
+    nix-std.url = "github:chessai/nix-std";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-26.05";
@@ -42,11 +43,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    fjord-launcher = {
-      url = "github:unmojang/FjordLauncher";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     odysseus = {
       url = "github:pewdiepie-archdaemon/odysseus/pull/2568/head";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -54,6 +50,11 @@
 
     nix-search-cli = {
       url = "github:peterldowns/nix-search-cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wrapper-modules = {
+      url = "github:BirdeeHub/nix-wrapper-modules";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
