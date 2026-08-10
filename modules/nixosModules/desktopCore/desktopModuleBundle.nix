@@ -9,6 +9,7 @@
       bluetoothManagement
       bootloader
       displayManagerConfig
+      hyprland
       installedPackages
       usbAutoMount
       environmentConfig

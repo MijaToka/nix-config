@@ -18,7 +18,6 @@
           let
             programList = [
               "firefox" # Browser
-              "hyprland" # Window manager
               "direnv" # Local environment variables acrivation when entering a directory
               "localsend" # Airdrop-like file transfer
               "zsh" # Z shell
