@@ -1,11 +1,17 @@
-{ inputs, ... }: {
-  flake.nixosModules.niri = {
-    imports = [ inputs.noctalia.nixosModules.default ];
-    programs.niri = {
-      enable = true;
-      noctalia = {
-        enable = true;
-        recommendedServices.enable = true;
+{
+  self,
+  ...
+}:
+{
+  flake = {
+    nixosModules.niri = {
+
+      imports = with self.nixosModules; [ noctalia ];
+
+      programs = {
+        niri = {
+          enable = true;
+        };
       };
     };
   };
