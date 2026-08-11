@@ -8,8 +8,8 @@
         scale = 1;
       };
       extraConfig = ''
-        require(monitors)
-        require(workspaces)
+        require("monitors")
+        require("workspaces")
       '';
 
     };

@@ -32,7 +32,7 @@
 
             "col.active_border" = {
               colors = lib.generators.mkLuaInline ''{"rgba(6791d9ee)", "rgba(f5a3a5ee)"}'';
-              angle = "135deg";
+              angle = "135";
             };
             "col.inactive_border" = "rgba(595959aa)";
 
@@ -80,6 +80,9 @@
           };
           debug = {
             disable_logs = false;
+          };
+          xwayland = {
+            force_zero_scaling = true;
           };
         };
         monitor = {

@@ -1,5 +1,5 @@
 {
-  flake.homeModule.hyprland = { lib, ... }: {
+  flake.homeModules.hyprland = { lib, ... }: {
 
     wayland.windowManager.hyprland.settings = {
       config = {
@@ -11,55 +11,24 @@
 
       curve =
         let
-          mkBezier =
-            name:
-            {
-              x1,
-              y1,
-              x2,
-              y2,
-            }:
-            {
-              _args = [
-                name
-                {
-                  type = "bezier";
-                  points = lib.generators.mkLuaInline "{ {${x1},${y1}}, {${x2},${y2}} }";
-                }
-              ];
-            };
+          mkBezier = name: points: {
+            _args = [
+              name
+              {
+                type = "bezier";
+                inherit points;
+              }
+            ];
+          };
         in
         [
-          (mkBezier "easeOutQuint" {
-            x1 = 0.23;
-            y1 = 1;
-            x2 = 0.32;
-            y2 = 1;
-          })
-          (mkBezier "easeInOutCubic" {
-            x1 = 0.65;
-            y1 = 0.05;
-            x2 = 0.36;
-            y2 = 1;
-          })
-          (mkBezier "linear" {
-            x1 = 0;
-            y1 = 0;
-            x2 = 1;
-            y2 = 1;
-          })
-          (mkBezier "almostLinear" {
-            x1 = 0.5;
-            y1 = 0.5;
-            x2 = 0.75;
-            y2 = 1.0;
-          })
-          (mkBezier "quick" {
-            x1 = 0.15;
-            y1 = 0;
-            x2 = 0.1;
-            y2 = 1;
-          })
+          /*nixfmt:disable*/
+          (mkBezier "easeOutQuint" [ [ 0.23 1 ] [ 0.32 1 ] ])
+          (mkBezier "easeInOutCubic" [ [ 0.65 0.05 ] [ 0.36 1 ] ])
+          (mkBezier "linear" [ [ 0 0 ] [ 1 1 ] ])
+          (mkBezier "almostLinear" [ [ 0.5 0.5 ] [ 0.75 1.0 ] ])
+          (mkBezier "quick" [ [ 0.15 0 ] [ 0.1 1 ] ])
+          /*nixfmt:enable*/
         ];
       animation =
         let
@@ -71,120 +40,124 @@
               curve,
               styleStr ? "",
             }:
+            let
+              speedVal = toString speed;
+            in
             {
-              inherit leaf enabled speed;
+              inherit leaf enabled;
+              speed = speedVal;
               bezier = curve;
               style = lib.mkIf (styleStr != "") styleStr;
             };
         in
         [
           (mkAnimation {
-            leafName = "global";
+            leaf = "global";
             enabled = true;
             speed = 10;
             curve = "default";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "border";
+            leaf = "border";
             enabled = true;
             speed = 5.39;
             curve = "easeOutQuint";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "windows";
+            leaf = "windows";
             enabled = true;
             speed = 4.79;
             curve = "easeOutQuint";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "windowsIn";
+            leaf = "windowsIn";
             enabled = true;
             speed = 4.1;
             curve = "easeOutQuint";
             styleStr = "popin 87%";
           })
           (mkAnimation {
-            leafName = "windowsOut";
+            leaf = "windowsOut";
             enabled = true;
             speed = 1.49;
             curve = "linear";
             styleStr = "popin 87%";
           })
           (mkAnimation {
-            leafName = "fadeIn";
+            leaf = "fadeIn";
             enabled = true;
             speed = 1.73;
             curve = "almostLinear";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "fadeOut";
+            leaf = "fadeOut";
             enabled = true;
             speed = 1.46;
             curve = "almostLinear";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "fade";
+            leaf = "fade";
             enabled = true;
             speed = 3.03;
             curve = "quick";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "layers";
+            leaf = "layers";
             enabled = true;
             speed = 3.81;
             curve = "easeOutQuint";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "layersIn";
+            leaf = "layersIn";
             enabled = true;
             speed = 4;
             curve = "easeOutQuint";
             styleStr = "fade";
           })
           (mkAnimation {
-            leafName = "layersOut";
+            leaf = "layersOut";
             enabled = true;
             speed = 1.5;
             curve = "linear";
             styleStr = "fade";
           })
           (mkAnimation {
-            leafName = "fadeLayersIn";
+            leaf = "fadeLayersIn";
             enabled = true;
             speed = 1.79;
             curve = "almostLinear";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "fadeLayersOut";
+            leaf = "fadeLayersOut";
             enabled = true;
             speed = 1.39;
             curve = "almostLinear";
             styleStr = "";
           })
           (mkAnimation {
-            leafName = "workspaces";
+            leaf = "workspaces";
             enabled = true;
             speed = 1.94;
             curve = "almostLinear";
             styleStr = "fade";
           })
           (mkAnimation {
-            leafName = "workspacesIn";
+            leaf = "workspacesIn";
             enabled = true;
             speed = 1.21;
             curve = "almostLinear";
             styleStr = "fade";
           })
           (mkAnimation {
-            leafName = "workspacesOut";
+            leaf = "workspacesOut";
             enabled = true;
             speed = 1.94;
             curve = "almostLinear";

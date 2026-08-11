@@ -38,17 +38,9 @@
               ];
 
               WSMovement = lib.flatten [
-                (map (workspace: mkWSMovement workspace workspace) [
-                  1
-                  2
-                  3
-                  4
-                  5
-                  6
-                  7
-                  8
-                  9
-                ])
+                /*nixfmt:disable*/
+                (map (workspace: mkWSMovement workspace workspace) [ 1 2 3 4 5 6 7 8 9 ])
+                /*nixfmt:enable*/
                 [
                   (mkWSMovement 0 10)
                   (mkWSMovement "TAB" ''"special:magic"'')
@@ -88,7 +80,7 @@
               (mkBind "SUPER + mouse_up" "focus" ''{ workspace = "e+1" }'')
 
               #Screenshot (continued in bindo)
-              (mkBind "Print" "exec_cmd" ''"hyprshot -m region"'')
+              (mkBind "Print" "exec_cmd" ''"${lib.getExe pkgs.hyprshot} -m region"'')
               (mkBind "SHIFT + Print" "exec_cmd" ''"${lib.getExe pkgs.hyprshot} -m window"'')
               (mkBind "SUPER + Print" "exec_cmd" ''"${lib.getExe pkgs.hyprshot} -m output"'')
 
