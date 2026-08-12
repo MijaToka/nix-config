@@ -48,7 +48,6 @@
               ];
             in
             [
-
               (mkBind "SUPER + Return" "exec_cmd" "terminal")
               (mkBind "SUPER + SHIFT + Escape" "exec_cmd" ''"systemctl suspend"'')
               (mkBind "SUPER + Escape" "exec_cmd" ''"loginctl lock-session"'')
@@ -60,6 +59,8 @@
               (mkBind "SUPER + F" "window.float" "")
               (mkBind "SUPER + SHIFT + F" "window.fullscreen" ''{ action = "toggle" }'')
               (mkBind "SUPER + SPACE" "exec_cmd" "menu")
+              (mkBind "SUPER + COMMA" "exec_cmd" ''"${lib.getExe pkgs.swaynotificationcenter} -t"'')
+
               (mkBind "SUPER + P" "window.pseudo" "")
               (mkBind "SUPER + O" "layout" ''"togglesplit"'')
               (mkBind "SUPER + SHIFT + O" "layout" ''"swapsplit"'')
