@@ -1,10 +1,18 @@
 {
+  self,
+  inputs,
+  ...
+}:
+{
   flake.nixosModules.users =
     {
       pkgs,
+      config,
       ...
     }:
     {
+      imports = [ inputs.home-manager.nixosModules.home-manager ];
+
       users = {
         defaultUserShell = pkgs.zsh;
 
@@ -18,6 +26,25 @@
             "libvirtd"
           ];
           initialPassword = "password";
+        };
+      };
+
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        users.mija = {
+          imports = with self.homeModules; [
+            git
+            hyprBundle
+            kitty
+            mpv
+            stylix
+            swaync
+            udiskie
+            xdgConfig
+            zsh
+          ];
+          home.stateVersion = config.system.stateVersion;
         };
       };
     };

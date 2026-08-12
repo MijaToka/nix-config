@@ -1,5 +1,5 @@
 {
-  flake.homeModules.hyrpidle =
+  flake.homeModules.hypridle =
     { lib, pkgs, ... }:
     {
       services.hypridle = {
