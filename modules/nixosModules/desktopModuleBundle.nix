@@ -9,6 +9,7 @@
       bluetoothManagement
       bootloader
       displayManagerConfig
+      fonts
       hyprland
       installedPackages
       usbAutoMount
