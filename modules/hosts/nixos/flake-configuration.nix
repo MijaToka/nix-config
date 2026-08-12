@@ -26,6 +26,7 @@
         powerKey
         customServices
         gpuDrivers
+        nix-ld
       ];
     }
   );
