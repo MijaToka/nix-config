@@ -43,7 +43,7 @@
                 /*nixfmt:enable*/
                 [
                   (mkWSMovement 0 10)
-                  (mkWSMovement "TAB" ''"special:magic"'')
+                  (mkBind "SUPER + TAB" "workspace.toggle_special" ''"magic"'')
                 ]
               ];
             in
