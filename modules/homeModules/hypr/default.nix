@@ -4,6 +4,7 @@
       hyprland
       hyprlock
       hypridle
+      hyprpaper
       hyprshot
     ];
   };
