@@ -18,7 +18,7 @@ Rectangle {
 
     FontLoader {
         id: jetBrainsMono
-        source: "/home/mija/.nix-profile/share/fonts/truetype/NerdFonts/JetBrainsMono/JetBrainsMonoNerdFontPropo-Regular.ttf"
+        source: "/run/current-system/sw/share/X11/fonts/JetBrainsMonoNerdFontPropo-Regular.ttf"
     }
 
     height: parent.height
@@ -34,10 +34,10 @@ Rectangle {
     Text {
         id: textObj
         text: root.text
-        color: textColor
+        color: parent.textColor
         font {
             pixelSize: 13
-            family: isSymbol ? symbolFont : jetBrainsMono.name
+            family: parent.isSymbol ? parent.symbolFont : jetBrainsMono.name
         }
         anchors {
             centerIn: parent
