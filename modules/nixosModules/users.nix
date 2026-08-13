@@ -41,6 +41,7 @@
             stylix
             swaync
             udiskie
+            wofi
             xdgConfig
             zsh
           ];
