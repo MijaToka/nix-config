@@ -11,6 +11,7 @@
                 hl.exec_cmd("${lib.getExe pkgs.quickshell} -p ~/.dotfiles/quickshell/shell.qml")
                 hl.exec_cmd("${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets")
                 hl.exec_cmd("${lib.getExe pkgs.easyeffects} -w")
+                hl.exec_cmd("hyprctl setcursor Bibata-Modern-Ice 20")
               end 
             '')
           ];
