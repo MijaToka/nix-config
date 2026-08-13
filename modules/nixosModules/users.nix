@@ -30,10 +30,12 @@
       };
 
       home-manager = {
+        backupFileExtension = "bkp";
         useGlobalPkgs = true;
         useUserPackages = true;
         users.mija = {
           imports = with self.homeModules; [
+            cursors
             git
             hyprBundle
             kitty

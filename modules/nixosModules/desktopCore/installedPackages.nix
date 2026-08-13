@@ -134,6 +134,7 @@
 
             #Icons
             adwaita-icon-theme
+            bibata-cursors
 
             # Other
             home-manager
