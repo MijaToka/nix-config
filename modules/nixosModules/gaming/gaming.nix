@@ -22,7 +22,7 @@
             gamescopeSession.enable = true;
             remotePlay.openFirewall = true;
             dedicatedServer.openFirewall = true;
-            extraCompatPackages = with pkgs; [
+            extraCompatPackages = with pkgs.unstable; [
               proton-ge-bin
             ];
           };
@@ -37,8 +37,8 @@
             wineWow64Packages.stable
             wineWow64Packages.waylandFull
             mangohud
-            protonup-ng
-            protonup-qt
+            unstable.protonup-rs
+            unstable.protonup-qt
           ])
           (lib.mkIf cfg.minecraft.enable (
             with pkgs;
