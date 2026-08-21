@@ -44,6 +44,7 @@
                 [
                   (mkWSMovement 0 10)
                   (mkBind "SUPER + TAB" "workspace.toggle_special" ''"magic"'')
+                  (mkBind "SUPER + SHIFT + TAB" "window.move" ''{ workspace = "special:magic", follow = true }'')
                 ]
               ];
             in
