@@ -27,13 +27,15 @@
           in
           inputs.wrapper-modules.wrappers.zsh.wrap {
             inherit pkgs;
-            runtimePkgs = with pkgs; [
-              nh
-              fastfetch
-              fzf
-              devenv
-              direnv
-            ];
+            runtimePkgs =
+              (with pkgs; [
+                nh
+                fastfetch
+                fzf
+                devenv
+                direnv
+              ])
+              ++ [ self'.packages.ohMyPosh ];
             zshAliases = {
               os-switch = "${lib.getExe pkgs.nh} os switch ${flakeDir}";
               os-update = "${lib.getExe pkgs.nh} os switch --update ${flakeDir}";
