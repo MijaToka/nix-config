@@ -19,6 +19,9 @@
         desktopModuleBundle
         { }
 
+        noctalia
+        umbriel
+
         gamingModuleBundle
         { gaming.osu.enable = true; }
 

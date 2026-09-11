@@ -21,6 +21,7 @@
       soundConfig
       sshModule
       udevRules
+      udisks
       wacom
       xserverConfig
     ];

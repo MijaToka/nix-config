@@ -43,6 +43,7 @@
             mpv
             stylix
             swaync
+            umbriel
             udiskie
             wofi
             xdgConfig
