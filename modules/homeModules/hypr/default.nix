@@ -6,6 +6,7 @@
       hypridle
       hyprpaper
       hyprshot
+      hyprsunset
     ];
   };
 }
