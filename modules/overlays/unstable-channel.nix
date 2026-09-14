@@ -1,7 +1,4 @@
-{
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 {
   flake.overlays.unstable-channel = final: _: {
     unstable = import inputs.nixpkgs-unstable {
