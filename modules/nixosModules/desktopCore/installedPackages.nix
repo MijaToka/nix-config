@@ -8,12 +8,6 @@
     { inputs', ... }: { pkgs, ... }: {
       imports = [ self.nixosModules.nvim ];
       config = {
-        nix.settings = {
-          # Cachix services to not have to compile
-          trusted-substituters = [ "https://unmojang.cachix.org" ];
-          trusted-public-keys = [ "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY=" ];
-        };
-
         programs =
           let
             programList = [
