@@ -7,11 +7,11 @@
       services.displayManager = {
 
         ly = {
-          enable = false;
+          enable = true;
         };
 
         sddm = {
-          enable = true;
+          enable = false;
           wayland.enable = true;
           package = pkgs.kdePackages.sddm;
           extraPackages = with pkgs.kdePackages; [
