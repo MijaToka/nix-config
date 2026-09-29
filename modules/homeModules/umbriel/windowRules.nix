@@ -6,6 +6,7 @@
           blur = true;
         }
         {
+          # Maximize windows that are alone
           match.is_alone = true;
           default_maximize = true;
         }
@@ -20,7 +21,7 @@
           default_pinned = true;
         }
         {
-          # XWayland popups fix
+          # XWayland popups fix (steam popup)
           match = {
             title = "^$";
             # xwayland = true;
