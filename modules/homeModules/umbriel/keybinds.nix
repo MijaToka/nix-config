@@ -48,8 +48,8 @@
             "Mod+F" = "window-toggle-floating";
             "Mod+Shift+F" = "window-toggle-fullscreen";
             "Mod+M" = "window-toggle-maximize-to-edges";
-            "Mod+C" = "window-cycle-width";
-            "Mod+Shift+C" = "window-cycle-width-back";
+            "Mod+C" = "window-cycle-primary-extent";
+            "Mod+Shift+C" = "window-cycle-primary-extent-back";
 
             "Mod+Space" = "spawn:${noctaliaExe} msg panel-toggle launcher";
 

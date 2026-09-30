@@ -14,7 +14,15 @@
           };
           layout = {
             mode = "scrolling";
-            scrolling = { };
+            extent_presets = [
+              0.33
+              0.5
+              0.66
+              1
+            ];
+            scrolling = {
+              default_extent_fraction = 0.5;
+            };
           };
         };
 
