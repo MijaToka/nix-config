@@ -9,19 +9,20 @@
       bluetoothManagement
       bootloader
       displayManagerConfig
+      environmentConfig
       fonts
       hyprland
       installedPackages
-      usbAutoMount
-      environmentConfig
       garbageCollection
       keyrings
       networkConfig
       nixSettings
       soundConfig
       sshModule
+      timeZoneLocale
       udevRules
       udisks
+      usbAutoMount
       wacom
       xserverConfig
     ];
