@@ -1,5 +1,5 @@
 { inputs, ... }: {
-  flake.nixosModules.noctalia = {
+  flake.nixosModules.noctalia = { pkgs, ... }: {
 
     imports = [ inputs.noctalia.nixosModules.default ];
 
@@ -9,5 +9,12 @@
         recommendedServices.enable = true;
       };
     };
+    # Dependencies of plugins
+    environment.systemPackages = with pkgs; [
+      # Spotify plugin
+      unstable.spotify-player
+      python3
+      gtk3
+    ];
   };
 }
