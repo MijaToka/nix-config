@@ -47,7 +47,7 @@
 
             "Mod+F" = "window-toggle-floating";
             "Mod+Shift+F" = "window-toggle-fullscreen";
-            "Mod+M" = "window-toggle-maximize-to-edges";
+            "Mod+M" = "window-toggle-maximize";
             "Mod+C" = "window-cycle-primary-extent";
             "Mod+Shift+C" = "window-cycle-primary-extent-back";
 
