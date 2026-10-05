@@ -25,6 +25,8 @@
         gamingModuleBundle
         { gaming.osu.enable = true; }
 
+        thunderbird
+
         users
         powerKey
         customServices

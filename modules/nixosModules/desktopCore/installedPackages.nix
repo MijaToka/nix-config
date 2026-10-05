@@ -16,7 +16,6 @@
               "localsend" # Airdrop-like file transfer
               "zsh" # Z shell
               "yazi" # Terminal file explorer
-              "thunderbird" # E-Mail client
             ];
             enabledPrograms = builtins.listToAttrs (
               map (name: {
