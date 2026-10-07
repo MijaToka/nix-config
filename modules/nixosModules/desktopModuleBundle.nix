@@ -10,6 +10,7 @@
       bootloader
       displayManagerConfig
       environmentConfig
+      firewall
       fonts
       hyprland
       installedPackages

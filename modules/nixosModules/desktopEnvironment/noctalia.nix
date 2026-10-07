@@ -15,6 +15,8 @@
       unstable.spotify-player
       python3
       gtk3
+      # Wi-Fi hotspot
+      iw
     ];
   };
 }
