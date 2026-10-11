@@ -27,6 +27,8 @@
 
         thunderbird
 
+        zsh
+
         users
         powerKey
         customServices
