@@ -47,7 +47,7 @@
             udiskie
             wofi
             xdgConfig
-            zsh
+            # zsh
           ];
           home.stateVersion = config.system.stateVersion;
         };
