@@ -12,9 +12,7 @@
           let
             programList = [
               "firefox" # Browser
-              "direnv" # Local environment variables acrivation when entering a directory
               "localsend" # Airdrop-like file transfer
-              "zsh" # Z shell
               "yazi" # Terminal file explorer
             ];
             enabledPrograms = builtins.listToAttrs (
@@ -82,13 +80,12 @@
             # Editors and file viewers
             ## Text editor
             neovim
-            # logseq # Open-source obsidian
             zathura # Minimal file viewer
             sioyek # Zathura alternative
 
             ## Notetaking
             xournalpp
-            # rnote ## Moved to stable branch
+            unstable.rnote
 
             ## Image editor/viewer
             gimp3 # Image editor
@@ -100,32 +97,23 @@
             musescore # Sheet music editing
 
             wofi # App launcher
-            # rofi ## TODO: move my configuration to rofi
 
             # Media player
             mpv
             vlc
 
             # Messaging apps
-            slack
-            # mattermost # This is the server (?)
 
             # DE and WM stuff
-            hyprland # WM
-            hyprpaper # WM wall paper (not being used?)
             brightnessctl
             playerctl
-            mako # Notification daemon
             quickshell # Shell creating app (in my case top bar)
             kdePackages.dolphin # File manager
-
-            # Networkmanager GUI
-            networkmanagerapplet
 
             # Terminal emulators
             kitty
 
-            #Icons
+            #Icons and cursors
             adwaita-icon-theme
             bibata-cursors
 
@@ -133,22 +121,20 @@
             home-manager
             nwg-displays # To change screen properties in hyprland with a GUI
             gearlever # GUI for instaling AppImages
-            # vdhcoapp # CoApp to download videos from firefox
             easyeffects # Microphone effects
+            bottles # Wine prefix manager
 
             # Device drivers
-            sc-controller
+            sc-controller # Steam game controller
 
-            unstable.osu-lazer-bin
-            unstable.ani-cli
-            unstable.mattermost-desktop # Moved  to user
-            unstable.rnote
-            unstable.zotero # Citations manager
+            unstable.ani-cli # Watch anime cli
+            zotero # Citations manager
 
             # Communication
             zapzap
             unstable.discord
             unstable.element-desktop
+            slack
 
             zoom-us
             unstable.mattermost-desktop
