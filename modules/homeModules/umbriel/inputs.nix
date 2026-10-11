@@ -42,6 +42,7 @@
                 "ZSA Technology Labs Voyager System Control"
                 "ZSA Technology Labs Voyager Consumer Control"
                 "ZSA Technology Labs Voyager Keyboard"
+                "Keychron K2 HE Keyboard"
               ];
         in
         englishKeyboards;

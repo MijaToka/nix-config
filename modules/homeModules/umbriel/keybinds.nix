@@ -16,6 +16,7 @@
             mkMovementBind = direction: key: {
               "Mod+${key}" = "window-focus-${direction}";
               "Mod+Shift+${key}" = "window-move-or-output-${direction}";
+              "Mod+Ctrl+${key}" = "output-focus-${direction}";
             };
 
             movementsBinds = lib.mergeAttrsList (
