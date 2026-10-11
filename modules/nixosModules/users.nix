@@ -39,7 +39,6 @@
             fzf
             git
             hyprBundle
-            kitty
             mpv
             stylix
             swaync

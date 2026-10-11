@@ -1,6 +1,12 @@
 { moduleWithSystem, ... }: {
   flake.homeModules.umbriel = moduleWithSystem (
-    { inputs', pkgs, ... }: { lib, ... }: {
+    {
+      inputs',
+      pkgs,
+      self',
+      ...
+    }:
+    { lib, ... }: {
       programs.umbriel.settings = {
         keybinds =
           let
@@ -35,13 +41,13 @@
             inherit (lib) getExe;
           in
           {
-            "Mod+Return" = "spawn:${getExe pkgs.kitty}";
+            "Mod+Return" = "spawn:${getExe self'.packages.kitty}";
             "Mod+Escape" = "spawn:${noctaliaExe} msg session lock";
             "Mod+Shift+Escape" = "spawn:${noctaliaExe} msg session lock-and-suspend";
             "Mod+Q" = "window-close";
             "Mod+Delete" = "spawn:${noctaliaExe} msg session logout";
             "Mod+E" = "spawn:${getExe inputs'.zen-browser.packages.default}";
-            "Mod+R" = "spawn:${getExe pkgs.kitty} ${getExe pkgs.yazi}";
+            "Mod+R" = "spawn:${getExe self'.packages.kitty} ${getExe pkgs.yazi}";
 
             "Mod+Tab" = "scratchpad-toggle";
             "Mod+Shift+Tab" = "window-toggle-scratchpad";

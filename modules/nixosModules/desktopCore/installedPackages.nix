@@ -110,9 +110,6 @@
             quickshell # Shell creating app (in my case top bar)
             kdePackages.dolphin # File manager
 
-            # Terminal emulators
-            kitty
-
             #Icons and cursors
             adwaita-icon-theme
             bibata-cursors

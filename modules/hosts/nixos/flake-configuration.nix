@@ -28,6 +28,7 @@
         thunderbird
 
         zsh
+        kitty
 
         users
         powerKey
