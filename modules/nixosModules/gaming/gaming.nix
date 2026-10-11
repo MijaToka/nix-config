@@ -1,4 +1,4 @@
-{
+{ inputs, ... }: {
   flake.nixosModules.gaming =
     {
       pkgs,
@@ -16,9 +16,11 @@
         osu.enable = lib.mkEnableOption "osu-laser-bin package";
       };
       config = lib.mkIf cfg.enable {
+        nixpkgs.overlays = [ inputs.millenium.overlays.default ];
         programs = {
           steam = {
             enable = true;
+            package = pkgs.millennium-steam;
             gamescopeSession.enable = true;
             remotePlay.openFirewall = true;
             dedicatedServer.openFirewall = true;
