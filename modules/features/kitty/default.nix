@@ -17,7 +17,7 @@
         }}";
         font = {
           name = "JetBrains Mono";
-          size = 12;
+          size = 14;
         };
         settings = {
           confirm_os_window_close = 0;
@@ -29,38 +29,62 @@
           background_blurr = 3;
         }
         // {
-          color0 = "#17233b";
-          color1 = "#cb817f";
-          color2 = "#6792e4";
-          color3 = "#8070ec";
-          color4 = "#a966cc";
-          color5 = "#93b1ec";
-          color6 = "#a296e9";
-          color7 = "#f2f2f3";
-          color8 = "#606670";
-          color9 = "#cb817f";
-          color10 = "#6792e4";
-          color11 = "#8070ec";
-          color12 = "#a966cc";
-          color13 = "#93b1ec";
-          color14 = "#a296e9";
-          color15 = "#f2f2f3";
+          # The basic colors
+          background = "#0f1c2c";
+          foreground = "#fedbd7";
+          selection_background = "#a092ea";
+          selection_foreground = "#fedbd7";
 
-          cursor = "#f2f2f3";
-          cursor_text_color = "#111a2c";
-          background = "#111a2c";
-          foreground = "#f2f2f3";
-          selection_foreground = "#afb1b6";
-          selection_background = "#17233b";
-          active_border_color = "#6792e4";
-          inactive_border_color = "#17233b";
-          url_color = "#6792e4";
+          # Cursor colors
+          cursor = "#fedbd7";
+          cursor_text_color = "#0f1c2c";
 
-          active_tab_foreground = "#181d25";
-          active_tab_background = "#6792e4";
-          inactive_tab_foreground = "#afb1b6";
-          inactive_tab_background = "#17233b";
-          cursor_trail_color = "#afb1b6";
+          # URL underline color when hovering with mouse
+          url_color = "#f5a3a5";
+
+          # Kitty window border colors
+          active_border_color = "#a092ea";
+          inactive_border_color = "#3c4566";
+
+          # OS Window titlebar colors
+          wayland_titlebar_color = "#0f1c2c";
+          macos_titlebar_color = "#0f1c2c";
+
+          # Tab bar colors
+          active_tab_background = "#0f1c2c";
+          active_tab_foreground = "#fedbd7";
+          inactive_tab_background = "#3c4566";
+          inactive_tab_foreground = "#f5a3a5";
+          tab_bar_background = "#3c4566";
+
+          # The 16 terminal colors
+          # normal
+          color0 = "#0f1c2c";
+          color1 = "#c57e72";
+          color2 = "#6791d9";
+          color3 = "#b78191";
+          color4 = "#9287d5";
+          color5 = "#c77c81";
+          color6 = "#ab859c";
+          color7 = "#fedbd7";
+
+          # bright
+          color8 = "#9c5560";
+          color9 = "#c57e72";
+          color10 = "#6791d9";
+          color11 = "#b78191";
+          color12 = "#9287d5";
+          color13 = "#c77c81";
+          color14 = "#ab859c";
+          color15 = "#e6f2fe";
+
+          # extended base16 colors
+          color16 = "#8692aa";
+          color17 = "#918bbb";
+          color18 = "#3c4566";
+          color19 = "#9c5560";
+          color20 = "#f5a3a5";
+          color21 = "#e9f2fb";
         };
 
       };
