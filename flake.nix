@@ -59,14 +59,8 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/cachix";
-    };
-
-    umbriel = {
-      url = "github:noctalia-dev/umbriel";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
+    noctalia.url = "github:noctalia-dev/noctalia/cachix";
+    umbriel.url = "github:noctalia-dev/umbriel/cachix";
 
     millenium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
@@ -84,9 +78,11 @@
     extra-substituters = [
       "https://unmojang.cachix.org"
       "https://noctalia.cachix.org"
+      "https://umbriel.cachix.org"
     ];
     extra-trusted-public-keys = [
       "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+      "umbriel.cachix.org-1:JfNq/2yg2S6D6z4Z2dVSZrZlDPQTKtexB6GAVLD98nw="
       "unmojang.cachix.org-1:OfHnbBNduZ6Smx9oNbLFbYyvOWSoxb2uPcnXPj4EDQY="
     ];
   };

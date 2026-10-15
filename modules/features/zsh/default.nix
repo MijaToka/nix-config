@@ -40,7 +40,6 @@
                 fastfetch
                 fzf
                 devenv
-                direnv
                 zoxide
               ])
               ++ [ self'.packages.ohMyPosh ];
