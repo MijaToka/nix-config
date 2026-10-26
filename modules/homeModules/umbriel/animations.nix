@@ -54,8 +54,6 @@
         curve = "almostLinear";
         dim = 0.5;
         blur = false;
-        maximize = true;
-        fullscreen = false;
       };
 
       border = {
