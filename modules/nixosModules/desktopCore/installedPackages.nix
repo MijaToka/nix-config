@@ -129,7 +129,7 @@
 
             # Communication
             zapzap
-            unstable.discord
+            unstable.vesktop
             unstable.element-desktop
             slack
 
