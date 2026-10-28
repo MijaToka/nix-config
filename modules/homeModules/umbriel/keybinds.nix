@@ -57,6 +57,8 @@
             "Mod+M" = "window-toggle-maximize";
             "Mod+C" = "window-cycle-primary-extent";
             "Mod+Shift+C" = "window-cycle-primary-extent-back";
+            "Mod+T" = "layout-master-count-decrease";
+            "Mod+Shift+T" = "layout-master-count-increase";
 
             "Mod+Space" = "spawn:${noctaliaExe} msg panel-toggle launcher";
 
