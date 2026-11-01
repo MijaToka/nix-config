@@ -9,6 +9,13 @@
           autosuggestions.enable = true;
           syntaxHighlighting.enable = true;
           histSize = 10000;
+          oh-my-zsh = {
+            enable = true;
+            plugins = [
+              "git"
+              "sudo"
+            ];
+          };
         };
         zoxide = {
           enable = true;
@@ -37,6 +44,7 @@
             inherit pkgs;
             runtimePkgs =
               (with pkgs; [
+                lazygit
                 fastfetch
                 fzf
                 devenv
@@ -50,6 +58,7 @@
               ".." = "cd ..";
               nsh = "nix-shell -p";
               viconf = "${self'.packages.nvim} --cmd 'cd ${flakeDir}'";
+              lg = "${lib.getExe pkgs.lazygit}";
             };
 
             zshrc.content = ''

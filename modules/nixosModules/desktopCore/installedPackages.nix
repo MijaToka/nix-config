@@ -48,9 +48,6 @@
           with pkgs;
           [
             # CLI Utils
-            ## Version control
-            git
-            lazygit
             wget # Download files from CLI
             sshfs # SSH FUSE file system
 

@@ -37,7 +37,6 @@
           imports = with self.homeModules; [
             cursors
             fzf
-            git
             hyprBundle
             mpv
             stylix

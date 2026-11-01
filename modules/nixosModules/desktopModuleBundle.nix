@@ -12,6 +12,7 @@
       environmentConfig
       firewall
       fonts
+      git
       hyprland
       installedPackages
       garbageCollection
