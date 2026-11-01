@@ -1,16 +1,16 @@
 {
   flake.homeModules.xdgConfig =
-    { pkgs, ... }:
+    { lib, pkgs, ... }:
     {
       xdg.desktopEntries = {
         qimgv = {
           name = "QImgV";
-          exec = "${pkgs.qimgv}/bin/qimgv";
+          exec = "${lib.getExe pkgs.qimgv}";
           icon = "qimgv";
         };
         mpv = {
           name = "mpv Media Player";
-          exec = "${pkgs.mpv}/bin/mpv";
+          exec = "${lib.getExe pkgs.mpv}";
           icon = "mpv";
         };
       };

@@ -6,7 +6,10 @@
 {
   flake.nixosModules.installedPackages = moduleWithSystem (
     { inputs', ... }: { pkgs, ... }: {
-      imports = [ self.nixosModules.nvim ];
+      imports = with self.nixosModules; [
+        nvim
+        mpv
+      ];
       config = {
         programs =
           let
@@ -96,7 +99,6 @@
             wofi # App launcher
 
             # Media player
-            mpv
             vlc
 
             # Messaging apps

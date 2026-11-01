@@ -38,7 +38,6 @@
             cursors
             fzf
             hyprBundle
-            mpv
             stylix
             swaync
             umbriel
