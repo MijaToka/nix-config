@@ -1,6 +1,6 @@
 { moduleWithSystem, ... }: {
   flake.homeModules.hyprland = moduleWithSystem (
-    { pkgs, ... }:
+    { inputs', pkgs, ... }:
     { lib, ... }: {
       wayland.windowManager.hyprland.settings = {
         on = {
@@ -14,7 +14,8 @@
             [
               "hyprland.start"
               (mkFunctionLine [
-                "${lib.getExe pkgs.quickshell} -p ~/.dotfiles/quickshell/shell.qml"
+                # "${lib.getExe pkgs.quickshell} -p ~/.dotfiles/quickshell/shell.qml"
+                "${lib.getExe inputs'.noctalia.packages.default}"
                 "${pkgs.gnome-keyring}/bin/gnome-keyring-daemon --start --components=secrets"
                 "${lib.getExe pkgs.easyeffects} -w"
                 "hyprctl setcursor Bibata-Modern-Ice 20"

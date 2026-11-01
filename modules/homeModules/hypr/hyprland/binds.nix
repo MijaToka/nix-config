@@ -9,11 +9,12 @@
         let
           luaInLine = lib.generators.mkLuaInline;
           mkVar = value: { _var = value; };
+          noctaliaExe = lib.getExe inputs'.noctalia.packages.default;
         in
         {
           terminal = mkVar "${lib.getExe pkgs.kitty}";
           fileManager = mkVar "${lib.getExe pkgs.kitty} ${lib.getExe pkgs.yazi}";
-          menu = mkVar "${lib.getExe pkgs.wofi} --show drun";
+          menu = mkVar "${noctaliaExe} msg panel-toggle launcher";
           browser = mkVar "${lib.getExe inputs'.zen-browser.packages.default}";
 
           bind =
@@ -50,8 +51,8 @@
             in
             [
               (mkBind "SUPER + Return" "exec_cmd" "terminal")
-              (mkBind "SUPER + SHIFT + Escape" "exec_cmd" ''"systemctl suspend"'')
-              (mkBind "SUPER + Escape" "exec_cmd" ''"loginctl lock-session"'')
+              (mkBind "SUPER + SHIFT + Escape" "exec_cmd" ''"${noctaliaExe} msg session lock-and-suspend"'')
+              (mkBind "SUPER + Escape" "exec_cmd" ''"${noctaliaExe} mgs session lock"'')
               (mkBind "SUPER + Q" "window.close" "")
               (mkBind "SUPER + SHIFT + Q" "window.kill" "")
               (mkBind "SUPER + Delete" "exit" "")
