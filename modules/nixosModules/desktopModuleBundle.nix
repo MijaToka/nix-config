@@ -24,7 +24,6 @@
       timeZoneLocale
       udevRules
       udisks
-      usbAutoMount
       wacom
       xserverConfig
     ];

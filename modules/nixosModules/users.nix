@@ -41,7 +41,7 @@
             stylix
             swaync
             umbriel
-            udiskie
+            # udiskie
             wofi
             xdgConfig
             # zsh
