@@ -9,7 +9,7 @@
           autosuggestions.enable = true;
           syntaxHighlighting.enable = true;
           histSize = 10000;
-          oh-my-zsh = {
+          ohMyZsh = {
             enable = true;
             plugins = [
               "git"
