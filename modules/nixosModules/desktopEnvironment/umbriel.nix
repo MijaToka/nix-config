@@ -6,9 +6,7 @@
 }:
 {
   flake.nixosModules.umbriel = moduleWithSystem (
-    { inputs', ... }:
-    { pkgs, ... }:
-    {
+    _: _: {
       imports = [ inputs.umbriel.nixosModules.default ];
       programs.umbriel = {
         enable = true;
