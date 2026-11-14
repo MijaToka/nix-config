@@ -107,7 +107,6 @@
             brightnessctl
             playerctl
             quickshell # Shell creating app (in my case top bar)
-            kdePackages.dolphin # File manager
 
             #Icons and cursors
             adwaita-icon-theme
@@ -143,6 +142,7 @@
           ++ (with inputs'; [
             zen-browser.packages.default
             # fjord-launcher.packages.${pkgs.system}.default
+            nordend-fm.packages.default # File manager
           ]);
       };
     }

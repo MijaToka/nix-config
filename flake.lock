@@ -718,6 +718,26 @@
         "type": "github"
       }
     },
+    "nordend-fm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1794668917,
+        "narHash": "sha256-Pp9XAA765NHNYd/AmZPAITVFBYrODVqrACybYBkmQzU=",
+        "owner": "pankaspe",
+        "repo": "nordend-fm",
+        "rev": "2b121d6ae5f88bf95cfc2417d0ed848372aacd16",
+        "type": "github"
+      },
+      "original": {
+        "owner": "pankaspe",
+        "repo": "nordend-fm",
+        "type": "github"
+      }
+    },
     "nur": {
       "inputs": {
         "flake-parts": [
@@ -806,6 +826,7 @@
         "nixpkgs-unstable": "nixpkgs-unstable",
         "nixpkgs-xwayland-fix": "nixpkgs-xwayland-fix",
         "noctalia": "noctalia_2",
+        "nordend-fm": "nordend-fm",
         "odysseus": "odysseus",
         "stylix": "stylix",
         "umbriel": "umbriel",

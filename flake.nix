@@ -66,6 +66,11 @@
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nordend-fm = {
+      url = "github:pankaspe/nordend-fm";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
   };
 
   outputs =
