@@ -57,6 +57,7 @@
             "Mod+M" = "window-toggle-maximize";
             "Mod+C" = "window-cycle-primary-extent";
             "Mod+Shift+C" = "window-cycle-primary-extent-back";
+            "Mod+T" = "workspace-set-layout toggle scrolling master dwindle";
 
             "Mod+Space" = "spawn ${noctaliaExe} msg panel-toggle launcher";
 
