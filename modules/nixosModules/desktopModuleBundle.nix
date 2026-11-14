@@ -26,6 +26,7 @@
       udisks
       wacom
       xserverConfig
+      xdg-portals
     ];
     config = {
       batteryManagement.enable = lib.mkDefault true;
