@@ -34,7 +34,7 @@
         environment.systemPackages = lib.mkMerge [
           (with pkgs; [
             # Gaming
-            # lutris
+            lutris
             winetricks
             wineWow64Packages.stable
             wineWow64Packages.waylandFull
