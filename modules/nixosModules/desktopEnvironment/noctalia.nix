@@ -17,6 +17,13 @@
       gtk3
       # Wi-Fi hotspot
       iw
+      # Pass
+      (pass.withExtensions (p: with p; [ pass-otp ]))
+      gnupg
+      wl-clipboard
     ];
+    programs.gnupg = {
+      agent.enable = true;
+    };
   };
 }
