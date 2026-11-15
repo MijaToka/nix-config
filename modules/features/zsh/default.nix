@@ -12,7 +12,6 @@
           ohMyZsh = {
             enable = true;
             plugins = [
-              "git"
               "sudo"
             ];
           };
@@ -62,6 +61,7 @@
             };
 
             zshrc.content = ''
+              export ZSH_COMPDUMP=$ZSH/cache/.zcompdump-$HOST
               autoload -U compinit && compinit
 
               export EDITOR=nvim
