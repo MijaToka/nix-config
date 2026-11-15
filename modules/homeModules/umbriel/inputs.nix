@@ -3,7 +3,7 @@
     programs.umbriel.settings.input = {
       middle_click_paste = true;
       window_drag_toggle = "none";
-      focus.follows_mouse = true;
+      focus.follows_mouse = "sloppy";
 
       keyboard = {
         layout = "latam";
