@@ -61,16 +61,13 @@
 
     noctalia.url = "github:noctalia-dev/noctalia/cachix";
     umbriel.url = "github:noctalia-dev/umbriel/cachix";
+    luciole.url = "github:noctalia-dev/luciole";
 
     millenium = {
       url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nordend-fm = {
-      url = "github:pankaspe/nordend-fm";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
-    };
   };
 
   outputs =

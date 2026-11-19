@@ -12,11 +12,11 @@
             "hyprland"
           ];
           umbriel = {
-            "org.freedesktop.impl.portal.FileChooser" = "nordend";
+            "org.freedesktop.impl.portal.FileChooser" = "luciole";
           };
         };
         extraPortals = with pkgs; [
-          inputs'.nordend-fm.packages.default
+          inputs'.luciole.packages.default
           xdg-desktop-portal-gtk
           xdg-desktop-portal-hyprland
         ];

@@ -142,7 +142,7 @@
           ++ (with inputs'; [
             zen-browser.packages.default
             # fjord-launcher.packages.${pkgs.system}.default
-            nordend-fm.packages.default # File manager
+            luciole.packages.default # File manager
           ]);
       };
     }
