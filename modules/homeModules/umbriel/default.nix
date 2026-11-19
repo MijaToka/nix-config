@@ -1,13 +1,16 @@
 { inputs, moduleWithSystem, ... }: {
   flake.homeModules.umbriel = moduleWithSystem (
-    { inputs', ... }: { lib, ... }: {
+    { inputs', ... }: { lib, pkgs, ... }: {
       imports = [ inputs.umbriel.homeModules.default ];
 
       programs.umbriel = {
         enable = true;
         settings = {
           general = {
-            autostart = [ "${lib.getExe inputs'.noctalia.packages.default}" ];
+            autostart = [
+              "${lib.getExe inputs'.noctalia.packages.default}"
+              "${lib.getExe pkgs.easyeffects} -w"
+            ];
             mod_key = "Super";
             xwayland = true;
             show_cheatsheet = false;

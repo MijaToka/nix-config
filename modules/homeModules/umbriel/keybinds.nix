@@ -60,6 +60,8 @@
             "Mod+T" = "workspace-set-layout toggle scrolling master dwindle";
 
             "Mod+Space" = "spawn ${noctaliaExe} msg panel-toggle launcher";
+            "Mod+P" = "spawn ${noctaliaExe} msg panel-toggle launcher '/pass '";
+            "Mod+O" = "spawn ${noctaliaExe} msg panel-toggle launcher '/pass otp '";
 
             "Mod+Comma" = "window-consume-left";
             "Mod+Period" = "window-consume-right";
